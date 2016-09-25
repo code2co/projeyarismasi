@@ -7,3 +7,19 @@
 
 @import "base/base";
 @import "refills/flashes";
+@import "refills/type-system-sans";
+@import "refills/navigation";
+@import "refills/hero";
+@import "refills/icon-bullet-points";
+@import 'refills/footer-2';
+
+body {
+  @include outer-container(80%);
+}
+
+.main_page_container {
+  @include padding(2em null 1em null);
+  .home_page.bullets {
+    @include padding(1em null null null);
+  }
+}
