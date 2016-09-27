@@ -1,5 +1,5 @@
 SMTP_SETTINGS = {
-  address: localhost
+  # address: localhost
   # authentication: :plain,
   # # domain: ENV.fetch("SMTP_DOMAIN"), # example: "heroku.com"
   # enable_starttls_auto: true,
