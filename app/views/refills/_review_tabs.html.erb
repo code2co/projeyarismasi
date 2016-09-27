@@ -1,0 +1,11 @@
+<ul class="accordion-tabs-minimal">
+  <% wizard_steps.each do |s| %>
+    <li class="tab-header-and-content">
+      <% if s == step %>
+        <%= link_to I18n.t("wicked.#{s}"), admission_review_build_path(s, admission_id: @admission.id, review_id: @review.id), class: "tab-link is-active" %>
+      <% else %>
+        <%= link_to I18n.t("wicked.#{s}"), admission_review_build_path(s, admission_id: @admission.id, review_id: @review.id), class: "tab-link" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

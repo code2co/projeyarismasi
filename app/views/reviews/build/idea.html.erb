@@ -1,0 +1,57 @@
+<div class="main_page_container">
+  <%= render :partial => "refills/review_tabs" %>
+  <h1>Fikrin Projeye Dönüşüm Süreci</h1>
+  <%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+    <div class="grid-items-lines">
+      <div class="grid-item grid-item-big">
+        <h2>Proje konusu ürünü / süreci geliştirme faaliyetleri nasıl örgütlendi ve yönetildi?</h2>
+        <p><%= @admission.idea__short_history %></p>
+      </div>
+      <div class="grid-item">
+        <h2>Değerlendirme Puanı</h2>
+        <%= f.input :idea__short_history, label: false %>
+      </div>
+      <div class="grid-item grid-item-big">
+        <h2>Proje tasarımı sırasında ne gibi yöntem ve teknikler kullanıldı?</h2>
+        <p><%= @admission.idea__tecniques_methods %></p>
+      </div>
+      <div class="grid-item">
+        <h2>Değerlendirme Puanı</h2>
+        <%= f.input :idea__tecniques_methods, label: false %>
+      </div>
+      <div class="grid-item grid-item-big">
+        <h2>Proje tasarımının doğrulanması nasıl gerçekleştirildi?</h2>
+        <p><%= @admission.idea__verification %></p>
+      </div>
+      <div class="grid-item">
+        <h2>Değerlendirme Puanı</h2>
+        <%= f.input :idea__verification, label: false %>
+      </div>
+      <div class="grid-item grid-item-big">
+        <h2>Benzer projelerle karşılaştırıldığında, tasarımdan kaynaklanan maliyet düşürücü yenilikler var mı?</h2>
+        <p><%= @admission.idea__cost_cutting_techniques %></p>
+      </div>
+      <div class="grid-item">
+        <h2>Değerlendirme Puanı</h2>
+        <%= f.input :idea__cost_cutting_techniques, label: false %>
+      </div>
+      <div class="grid-item grid-item-big">
+        <h2>Proje üretiminde yeni teknolojiler veya rekabetçi uygulamalar var mıdır?</h2>
+        <p><%= @admission.idea__new_tech_cost_cutting_advantages %></p>
+      </div>
+      <div class="grid-item">
+        <h2>Değerlendirme Puanı</h2>
+        <%= f.input :idea__new_tech_cost_cutting_advantages, label: false %>
+      </div>
+      <div class="right-cover"></div>
+      <div class="bottom-cover"></div>
+    </div>
+    <div class="grid-item-max">
+      <%= f.button :submit, "Kaydet >>>" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+

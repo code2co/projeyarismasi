@@ -17,3 +17,14 @@ en:
 
   titles:
     application: EMO Proje Yarışması Portalı
+  wicked:
+    subject: "Proje Konusu"
+    summary: "Proje Özeti"
+    subject_summary: "Proje Konusu ve Özeti"
+    genuine_idea: "Özgün Fikir"
+    innovativeness: "Yenilikçilik"
+    idea: "Fikirden Projeye"
+    industry: "Endüstriyelleşme ve Ticarileşme"
+    final: "Başvuru Tamamlama"
+
+

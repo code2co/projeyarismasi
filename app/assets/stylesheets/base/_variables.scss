@@ -21,6 +21,9 @@ $base-z-index: 0;
 
 // Colors
 $blue: #1565c0;
+$light-blue: #0077FF;
+$red: #B82012;
+$green: #4B5709;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
@@ -28,6 +31,7 @@ $light-gray: #ddd;
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
+$warning-color: $red;
 
 // Border
 $base-border-color: $light-gray;

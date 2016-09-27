@@ -16,7 +16,12 @@
           </li>
           <li class="nav-link"><a href="javascript:void(0)">Galeri</a></li>
           <li class="nav-link"><a href="javascript:void(0)">İletişim</a></li>
-          <li class="nav-link"><button>Kullanıcı Girişi</button></li>
+          <% if user_signed_in? %>
+            <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
+            <li class="nav-link"><button>Çıkış Yap</button></li>
+          <% else %>
+            <li class="nav-link"><button>Kullanıcı Girişi</button></li>
+          <% end %>
       </nav>
     </div>
   </div>

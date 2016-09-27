@@ -1,0 +1,18 @@
+<div class="main_page_container">
+  <%= render :partial => "refills/review_tabs" %>
+  <div class="grid-items-lines">
+    <div class="grid-item grid-item-big">
+      <h1>Proje Konusu ve Özeti:</h1>
+      <h2>Konu: <%= @admission.subject %></h2>
+      <hr>
+      <h2>Proje Özeti</h2>
+      <p><%= @admission.summary %></p>
+    </div>
+    <div class="grid-item">
+      <%= link_to "Bir sonraki adıma geç", next_wizard_path %>
+    </div>
+    <div class="right-cover"></div>
+    <div class="bottom-cover"></div>
+  </div>
+</div>
+

@@ -16,7 +16,7 @@
   }
 
   .hero-content {
-    max-width: 20em;
+    max-width: 25em;
     text-align: center;
 
     @include media($large-screen) {
@@ -26,5 +26,8 @@
 
   .hero-logo {
     margin: auto;
+  }
+  button {
+    background-color: $light-blue;
   }
 }

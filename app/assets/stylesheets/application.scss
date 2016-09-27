@@ -12,6 +12,8 @@
 @import "refills/hero";
 @import "refills/icon-bullet-points";
 @import 'refills/footer-2';
+@import "refills/accordion-tabs-minimal";
+@import "refills/grid-items-lines";
 
 body {
   @include outer-container(80%);
@@ -22,4 +24,11 @@ body {
   .home_page.bullets {
     @include padding(1em null null null);
   }
+  .breadcrumb {
+    @include margin(null null 1em null);
+  }
+}
+
+hr {
+  width: 100% !important;
 }

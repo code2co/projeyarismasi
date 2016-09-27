@@ -61,6 +61,10 @@ group :staging, :production do
 end
 
 gem 'high_voltage'
-gem 'bourbon', '5.0.0.beta.6'
+gem 'bourbon', '~> 5.0.0.beta.6'
 gem 'neat', '~> 1.8.0'
 gem 'refills', group: [:development, :test]
+
+gem 'wicked', '~> 1.3', '>= 1.3.1'
+gem 'annotate'
+gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
