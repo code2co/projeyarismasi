@@ -38,6 +38,7 @@
 
 class Review < ApplicationRecord
   belongs_to :admission
+  belongs_to :user
   validates :genuine_idea__research, presence: true, if: :final?                       
   validates :genuine_idea__proof, presence: true, if: :final?                          
   validates :genuine_idea__processes, presence: true, if: :final?                      

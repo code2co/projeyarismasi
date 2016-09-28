@@ -44,8 +44,21 @@ RSpec.describe Review, type: :model do
     expect(review).to be_valid
   end
   
-  it 'is not valid when a sample field exceeds given max value' do
-    review = build :review, idea__verification: 85
-    expect(review).not_to be_valid
-  end
+  it { should validate_numericality_of(:genuine_idea__research).is_less_than_or_equal_to(50) }
+  it { should validate_numericality_of(:genuine_idea__proof).is_less_than_or_equal_to(50) }
+  it { should validate_numericality_of(:genuine_idea__processes).is_less_than_or_equal_to(50) }
+  it { should validate_numericality_of(:innovativeness__target_user_expectations).is_less_than_or_equal_to(30) }
+  it { should validate_numericality_of(:innovavativeness__genuine).is_less_than_or_equal_to(30) }
+  it { should validate_numericality_of(:innovativeness__similarity_to_other_projects).is_less_than_or_equal_to(30) }
+  it { should validate_numericality_of(:innovativeness__benefits_to_users).is_less_than_or_equal_to(30) }
+  it { should validate_numericality_of(:innovativeness__research).is_less_than_or_equal_to(30) }
+  it { should validate_numericality_of(:idea__short_history).is_less_than_or_equal_to(80) }
+  it { should validate_numericality_of(:idea__tecniques_methods).is_less_than_or_equal_to(80) }
+  it { should validate_numericality_of(:idea__verification).is_less_than_or_equal_to(80) }
+  it { should validate_numericality_of(:idea__new_tech_cost_cutting_advantages).is_less_than_or_equal_to(80) }
+  it { should validate_numericality_of(:industry__market_potential).is_less_than_or_equal_to(40) }
+  it { should validate_numericality_of(:industry__physibility).is_less_than_or_equal_to(80) }
+  it { should validate_numericality_of(:industry__sales_potential).is_less_than_or_equal_to(40) }
+  it { should validate_numericality_of(:industry__added_value).is_less_than_or_equal_to(40) }
+  
 end
