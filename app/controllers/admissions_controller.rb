@@ -1,4 +1,5 @@
 class AdmissionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_admission, except: [ :index, :new, :create ]
   add_breadcrumb "Ana Sayfa", :root_path
   def index

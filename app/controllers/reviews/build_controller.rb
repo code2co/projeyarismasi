@@ -1,5 +1,6 @@
 class Reviews::BuildController < ApplicationController
   include Wicked::Wizard
+  before_action :authenticate_user!
   before_action :set_admission
   before_action :set_review
 

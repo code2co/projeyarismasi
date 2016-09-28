@@ -14,12 +14,17 @@
 @import 'refills/footer-2';
 @import "refills/accordion-tabs-minimal";
 @import "refills/grid-items-lines";
+@import "components/devise";
 
 body {
   @include outer-container(80%);
+  #js-navigation-menu > li> button > a {
+    color: white;
+  }
 }
 
 .main_page_container {
+  @include fill-parent;
   @include padding(2em null 1em null);
   .home_page.bullets {
     @include padding(1em null null null);

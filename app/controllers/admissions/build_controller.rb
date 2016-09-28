@@ -1,5 +1,6 @@
 class Admissions::BuildController < ApplicationController
   include Wicked::Wizard
+  before_action :authenticate_user!
   before_action :set_admission
   steps :subject, :summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 

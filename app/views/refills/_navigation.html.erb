@@ -17,12 +17,14 @@
           <li class="nav-link"><a href="javascript:void(0)">Galeri</a></li>
           <li class="nav-link"><a href="javascript:void(0)">İletişim</a></li>
           <% if user_signed_in? %>
-            <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
-            <li class="nav-link"><button>Çıkış Yap</button></li>
-          <% else %>
-            <li class="nav-link"><button>Kullanıcı Girişi</button></li>
+          <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
           <% end %>
-      </nav>
+          <% if user_signed_in? %>
+          <li class="nav-link"><button><%= link_to "Çıkış Yap", destroy_user_session_path, method: :delete %></button></li>
+          <% else %>
+          <li class="nav-link"><button><%= link_to "Giriş Yap", new_user_session_path %></button></li>
+          <% end %>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
