@@ -29,5 +29,23 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'is valid with all things in place' do
+    review = create :review
+    expect(review).to be_valid
+  end
+  
+  it 'is not valid with final is true and another field is empty' do
+    review = build :review, idea__verification: nil
+    expect(review).not_to be_valid
+  end
+  
+  it 'is valid when all fields are present yet final is false' do
+    review = build :review, final: false
+    expect(review).to be_valid
+  end
+  
+  it 'is not valid when a sample field exceeds given max value' do
+    review = build :review, idea__verification: 85
+    expect(review).not_to be_valid
+  end
 end

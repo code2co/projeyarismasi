@@ -68,3 +68,4 @@ gem 'refills', group: [:development, :test]
 gem 'wicked', '~> 1.3', '>= 1.3.1'
 gem 'annotate'
 gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
+gem "faker", group: [ :development, :test ]

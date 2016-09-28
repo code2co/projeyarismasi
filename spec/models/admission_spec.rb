@@ -31,5 +31,18 @@
 require 'rails_helper'
 
 RSpec.describe Admission, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'is valid with all things in place' do
+    admission = create :admission
+    expect(admission).to be_valid
+  end
+
+  it "is not valid without industry sales potential, yet final is true" do
+    admission = build :admission, industry__sales_potential: nil
+    expect(admission).not_to be_valid
+  end
+  
+  it 'is valid when final is false' do
+    admission = build :admission, final: false
+    expect(admission).to be_valid
+  end
 end
