@@ -1,56 +1,51 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/review_tabs" %>
-  <h1>Proje Özelliklerinde, Uygulama Yöntemlerinde Özgünlük, Yenilikçilik</h1>
-  <%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
-    <div class="grid-items-lines">
-      <div class="grid-item grid-item-big">
-        <h2>Proje Özelliklerinin Belirlenmesinde Hedef Kullanıcı Beklentilerinin Karşılanması</h2>
-        <p><%= @admission.innovativeness__target_user_expectations %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :innovativeness__target_user_expectations, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Proje Konusu Ürün Tasarımının Özgünlüğü</h2>
-        <p><%= @admission.innovavativeness__genuine %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :innovavativeness__genuine, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Projenin Özgün ve Yenilikçi Yönlerinin Daha Önceki Projeler ile Karşılaştırılması</h2>
-        <p><%= @admission.innovativeness__similarity_to_other_projects %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :genuine_idea__processes, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Projenin Özgün ve Yenilikçi Yönlerinin Kullanıcılara Sağladığı Yararlar</h2>
-        <p><%= @admission.innovativeness__benefits_to_users %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :innovativeness__benefits_to_users, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Proje Konusu İçin Geçerli Olabilecek Uluslararası Standartlar</h2>
-        <p><%= @admission.innovativeness__research %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :innovativeness__research, label: false %>
-      </div>
-      <div class="right-cover"></div>
-      <div class="bottom-cover"></div>
-    </div>
-    <div class="grid-item-max">
-      <%= f.button :submit, "Kaydet >>>" %>
-    </div>
-  <% end %>
+<%= render :partial => "refills/review_tabs" %>
+<h1>Proje Özelliklerinde, Uygulama Yöntemlerinde Özgünlük, Yenilikçilik</h1>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<div class="grid-items-lines">
+  <div class="grid-item grid-item-big">
+    <h2>Proje Özelliklerinin Belirlenmesinde Hedef Kullanıcı Beklentilerinin Karşılanması</h2>
+    <p><%= @admission.innovativeness__target_user_expectations %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :innovativeness__target_user_expectations, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Proje Konusu Ürün Tasarımının Özgünlüğü</h2>
+    <p><%= @admission.innovavativeness__genuine %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :innovavativeness__genuine, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Projenin Özgün ve Yenilikçi Yönlerinin Daha Önceki Projeler ile Karşılaştırılması</h2>
+    <p><%= @admission.innovativeness__similarity_to_other_projects %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :genuine_idea__processes, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Projenin Özgün ve Yenilikçi Yönlerinin Kullanıcılara Sağladığı Yararlar</h2>
+    <p><%= @admission.innovativeness__benefits_to_users %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :innovativeness__benefits_to_users, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Proje Konusu İçin Geçerli Olabilecek Uluslararası Standartlar</h2>
+    <p><%= @admission.innovativeness__research %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :innovativeness__research, label: false %>
+  </div>
+  <div class="right-cover"></div>
+  <div class="bottom-cover"></div>
 </div>
-
-
-
+<div class="grid-item-max">
+  <%= f.button :submit, "Kaydet >>>" %>
+</div>
+<% end %>

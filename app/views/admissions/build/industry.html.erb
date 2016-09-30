@@ -1,13 +1,9 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/admission_tabs" %>
-  <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
-    <%= f.input :industry__market_potential, label: "Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.", input_html: { rows: 5 } %>
-    <%= f.input :industry__physibility, label: "Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı", input_html: { rows: 5 } %>
-    <%= f.input :industry__sales_potential, label: "Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü", input_html: { rows: 5 } %>
-    <%= f.input :industry__added_value, label: "Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi", input_html: { rows: 5 } %>
-    <%= f.button :submit, 'Sonraki Adıma Geç' %>
-    <%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
-  <% end %>
-</div>
-
-
+<%= render :partial => "refills/admission_tabs" %>
+<%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
+<%= f.input :industry__market_potential, label: "Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.", input_html: { rows: 5 } %>
+<%= f.input :industry__physibility, label: "Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı", input_html: { rows: 5 } %>
+<%= f.input :industry__sales_potential, label: "Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü", input_html: { rows: 5 } %>
+<%= f.input :industry__added_value, label: "Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi", input_html: { rows: 5 } %>
+<%= f.button :submit, 'Sonraki Adıma Geç' %>
+<%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
+<% end %>

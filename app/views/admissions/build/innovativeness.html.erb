@@ -1,13 +1,10 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/admission_tabs" %>
-  <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
-    <%= f.input :innovativeness__target_user_expectations, label: "Proje özelliklerinin belirlenmesinde, hedef kullanıcı beklentilerinin karşılanması", input_html: { rows: 5 } %>
-    <%= f.input :innovavativeness__genuine, label: "Proje konusu ürün tasarımının özgünlüğü", input_html: { rows: 5 } %>
-    <%= f.input :innovativeness__similarity_to_other_projects, label: "Projenin özgün ve yenilikçi özelliklerini daha önceki benzer projeler ile karşılaştırınız", input_html: { rows: 5 } %>
-    <%= f.input :innovativeness__benefits_to_users, label: "Projedeki özgün ve yenilikçi özelliklerin, kullanıcısına ne tür yararlar sağladığını açıklayınız", input_html: { rows: 5 } %>
-    <%= f.input :innovativeness__research, label: "Proje konusu için geçerli olabilecek uluslararası standartlar araştırılmış mıdır.", input_html: { rows: 5 } %>
-    <%= f.button :submit, 'Sonraki Adıma Geç' %>
-    <%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
-  <% end %>
-</div>
-
+<%= render :partial => "refills/admission_tabs" %>
+<%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
+<%= f.input :innovativeness__target_user_expectations, label: "Proje özelliklerinin belirlenmesinde, hedef kullanıcı beklentilerinin karşılanması", input_html: { rows: 5 } %>
+<%= f.input :innovavativeness__genuine, label: "Proje konusu ürün tasarımının özgünlüğü", input_html: { rows: 5 } %>
+<%= f.input :innovativeness__similarity_to_other_projects, label: "Projenin özgün ve yenilikçi özelliklerini daha önceki benzer projeler ile karşılaştırınız", input_html: { rows: 5 } %>
+<%= f.input :innovativeness__benefits_to_users, label: "Projedeki özgün ve yenilikçi özelliklerin, kullanıcısına ne tür yararlar sağladığını açıklayınız", input_html: { rows: 5 } %>
+<%= f.input :innovativeness__research, label: "Proje konusu için geçerli olabilecek uluslararası standartlar araştırılmış mıdır.", input_html: { rows: 5 } %>
+<%= f.button :submit, 'Sonraki Adıma Geç' %>
+<%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
+<% end %>

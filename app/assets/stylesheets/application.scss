@@ -45,3 +45,12 @@ body {
 hr {
   width: 100% !important;
 }
+
+header.navigation ul li.nav-link button {
+  a {
+    padding-right: 0px !important;
+  }
+  &.application-btn {
+    background-color: green;
+  }
+} 

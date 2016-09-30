@@ -1,8 +1,6 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/admission_tabs" %>
-  <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
-    <%= f.input :summary, label: "Projenin Kısa Özeti", input_html: { rows: 10 } %>
-    <%= f.button :submit, 'Sonraki Adıma Geç' %>
-    <%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
-  <% end %>
-</div>
+<%= render :partial => "refills/admission_tabs" %>
+<%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
+<%= f.input :summary, label: "Projenin Kısa Özeti", input_html: { rows: 10 } %>
+<%= f.button :submit, 'Sonraki Adıma Geç' %>
+<%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
+<% end %>

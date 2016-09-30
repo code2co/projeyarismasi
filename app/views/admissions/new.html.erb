@@ -1,7 +1,5 @@
-<div class="main_page_container">
-  <%= render "application/breadcrumb" %>
-  <%= simple_form_for @admission do |f| %>
-    <%= f.input :subject, label: "Proje Konusu", placeholder: "Lütfen oluşturmak istediğiniz projenin konusunu giriniz.", input_html: { rows: 10 } %>
-    <%= f.button :submit, "Proje Başvurusuna Başla" %>
-  <% end %>
-</div>
+<%= render "application/breadcrumb" %>
+<%= simple_form_for @admission do |f| %>
+<%= f.input :subject, label: "Proje Konusu", placeholder: "Lütfen oluşturmak istediğiniz projenin konusunu giriniz.", input_html: { rows: 10 } %>
+<%= f.button :submit, "Proje Başvurusuna Başla" %>
+<% end %>

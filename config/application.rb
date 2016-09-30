@@ -12,6 +12,7 @@ module Projeyarismasi
       generate.stylesheets false
       generate.test_framework :rspec
       generate.view_specs false
+      generate.controller_specs false
     end
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_job.queue_adapter = :delayed_job

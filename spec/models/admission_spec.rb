@@ -45,4 +45,31 @@ RSpec.describe Admission, type: :model do
     admission = build :admission, final: false
     expect(admission).to be_valid
   end
+
+  context 'if_final' do
+    before { allow(subject).to receive(:final?).and_return true }
+    it { should validate_presence_of(:subject                                      )}
+    it { should validate_presence_of(:summary                                      )}
+    it { should validate_presence_of(:genuine_idea__research                       )}
+    it { should validate_presence_of(:genuine_idea__proof                          )}
+    it { should validate_presence_of(:genuine_idea__processes                      )}
+    it { should validate_presence_of(:innovativeness__target_user_expectations     )}
+    it { should validate_presence_of(:innovavativeness__genuine                    )}
+    it { should validate_presence_of(:innovativeness__similarity_to_other_projects )}
+    it { should validate_presence_of(:innovativeness__benefits_to_users            )}
+    it { should validate_presence_of(:innovativeness__research                     )}
+    it { should validate_presence_of(:idea__short_history                          )}
+    it { should validate_presence_of(:idea__tecniques_methods                      )}
+    it { should validate_presence_of(:idea__verification                           )}
+    it { should validate_presence_of(:idea__cost_cutting_techniques                )}
+    it { should validate_presence_of(:idea__new_tech_cost_cutting_advantages       )}
+    it { should validate_presence_of(:industry__market_potential                   )}
+    it { should validate_presence_of(:industry__physibility                        )}
+    it { should validate_presence_of(:industry__sales_potential                    )}
+    it { should validate_presence_of(:industry__added_value                        )}
+    it { should validate_presence_of(:final                                        )}
+    it { should validate_presence_of(:bio                                          )}
+  end
 end
+
+

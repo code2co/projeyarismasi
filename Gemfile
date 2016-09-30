@@ -72,3 +72,4 @@ gem "devise"
 gem 'devise-i18n'
 gem 'access-granted', '~> 1.1'
 gem 'rails-i18n', '~> 5.0', '>= 5.0.1'
+gem 'rails_admin', '~> 1.0'

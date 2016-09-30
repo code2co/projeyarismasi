@@ -1,8 +1,6 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/admission_tabs" %>
-    <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
-      <%= f.input :subject, label: "Projenin Konusu" %>
-      <%= f.button :submit, 'Sonraki Adıma Geç' %>
-    <% end %>
-</div>
+<%= render :partial => "refills/admission_tabs" %>
+<%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
+<%= f.input :subject, label: "Projenin Konusu" %>
+<%= f.button :submit, 'Sonraki Adıma Geç' %>
+<% end %>
 

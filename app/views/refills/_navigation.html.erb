@@ -12,16 +12,21 @@
             <ul class="submenu">
               <li><%= link_to "Yarışma Hakkında", page_path('yarisma') %></li>
               <li><%= link_to "Kurullar ve Bilgiler", page_path('kimler') %></li>
+              <li class="nav-link"><a href="javascript:void(0)">Galeri</a></li>
               <li><a href="#">Şartname</a></li>
             </ul>
           </li>
-          <li class="nav-link"><a href="javascript:void(0)">Galeri</a></li>
           <li class="nav-link"><a href="javascript:void(0)">İletişim</a></li>
           <% if user_signed_in? %>
-          <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
+          <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">Hesabım</a>
+            <ul class="submenu">
+              <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
+              <li class="nav-link"><%= link_to "Çıkış Yap", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+          <% if current_user.applicant? %>
+          <li class="nav-link"><button class="application-btn"><%= link_to "Yeni Başvuru", new_admission_path %></button></li>
           <% end %>
-          <% if user_signed_in? %>
-          <li class="nav-link"><button><%= link_to "Çıkış Yap", destroy_user_session_path, method: :delete %></button></li>
           <% else %>
           <li class="nav-link"><button><%= link_to "Giriş Yap", new_user_session_path %></button></li>
           <% end %>

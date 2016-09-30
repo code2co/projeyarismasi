@@ -1,13 +1,10 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/admission_tabs" %>
-  <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
-    <%= f.input :idea__short_history, label: "Proje konusu ürünü / süreci geliştirme faaliyetleri nasıl örgütlendi ve yönetildi?", input_html: { rows: 5 } %>
-    <%= f.input :idea__tecniques_methods, label: "Proje tasarımı sırasında ne gibi yöntem ve teknikler kullanıldı?", input_html: { rows: 5 } %>
-    <%= f.input :idea__verification, label: "Proje tasarımının doğrulanması nasıl gerçekleştirildi?", input_html: { rows: 5 } %>
-    <%= f.input :idea__cost_cutting_techniques, label: "Benzer projelerle karşılaştırıldığında, tasarımdan kaynaklanan maliyet düşürücü yenilikler var mı?", input_html: { rows: 5 } %>
-    <%= f.input :idea__new_tech_cost_cutting_advantages, label: "Proje üretiminde yeni teknolojiler veya rekabetçi uygulamalar var mıdır?", input_html: { rows: 5 } %>
-    <%= f.button :submit, 'Sonraki Adıma Geç' %>
-    <%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
-  <% end %>
-</div>
-
+<%= render :partial => "refills/admission_tabs" %>
+<%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
+<%= f.input :idea__short_history, label: "Proje konusu ürünü / süreci geliştirme faaliyetleri nasıl örgütlendi ve yönetildi?", input_html: { rows: 5 } %>
+<%= f.input :idea__tecniques_methods, label: "Proje tasarımı sırasında ne gibi yöntem ve teknikler kullanıldı?", input_html: { rows: 5 } %>
+<%= f.input :idea__verification, label: "Proje tasarımının doğrulanması nasıl gerçekleştirildi?", input_html: { rows: 5 } %>
+<%= f.input :idea__cost_cutting_techniques, label: "Benzer projelerle karşılaştırıldığında, tasarımdan kaynaklanan maliyet düşürücü yenilikler var mı?", input_html: { rows: 5 } %>
+<%= f.input :idea__new_tech_cost_cutting_advantages, label: "Proje üretiminde yeni teknolojiler veya rekabetçi uygulamalar var mıdır?", input_html: { rows: 5 } %>
+<%= f.button :submit, 'Sonraki Adıma Geç' %>
+<%= link_to "veya önceki adıma geri dön", admission_build_path(@previous_step, admission_id: @admission.id) %>
+<% end %>

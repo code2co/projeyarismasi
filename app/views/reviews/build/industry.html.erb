@@ -1,50 +1,43 @@
-<div class="main_page_container">
-  <%= render :partial => "refills/review_tabs" %>
-  <h1>Sanayii ve Ticari Uygulanabilirlik</h1>
-  <%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
-    <div class="grid-items-lines">
-      <div class="grid-item grid-item-big">
-        <h2>Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.</h2>
-        <p><%= @admission.industry__market_potential %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :industry__market_potential, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı.</h2>
-        <p><%= @admission.industry__physibility %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :industry__physibility, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü.</h2>
-        <p><%= @admission.industry__sales_potential %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :industry__sales_potential, label: false %>
-      </div>
-      <div class="grid-item grid-item-big">
-        <h2>Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi.</h2>
-        <p><%= @admission.industry__added_value %></p>
-      </div>
-      <div class="grid-item">
-        <h2>Değerlendirme Puanı</h2>
-        <%= f.input :industry__added_value, label: false %>
-      </div>
-      <div class="right-cover"></div>
-      <div class="bottom-cover"></div>
-    </div>
-    <div class="grid-item-max">
-      <%= f.button :submit, "Kaydet >>>" %>
-    </div>
-  <% end %>
+<%= render :partial => "refills/review_tabs" %>
+<h1>Sanayii ve Ticari Uygulanabilirlik</h1>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<div class="grid-items-lines">
+  <div class="grid-item grid-item-big">
+    <h2>Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.</h2>
+    <p><%= @admission.industry__market_potential %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :industry__market_potential, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı.</h2>
+    <p><%= @admission.industry__physibility %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :industry__physibility, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü.</h2>
+    <p><%= @admission.industry__sales_potential %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :industry__sales_potential, label: false %>
+  </div>
+  <div class="grid-item grid-item-big">
+    <h2>Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi.</h2>
+    <p><%= @admission.industry__added_value %></p>
+  </div>
+  <div class="grid-item">
+    <h2>Değerlendirme Puanı</h2>
+    <%= f.input :industry__added_value, label: false %>
+  </div>
+  <div class="right-cover"></div>
+  <div class="bottom-cover"></div>
 </div>
-
-
-
-
-
+<div class="grid-item-max">
+  <%= f.button :submit, "Kaydet >>>" %>
+</div>
+<% end %>

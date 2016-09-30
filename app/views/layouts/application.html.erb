@@ -5,9 +5,9 @@
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <%#
-    Configure default and controller-, and view-specific titles in
-    config/locales/en.yml. For more see:
-    https://github.com/calebthompson/title#usage
+  Configure default and controller-, and view-specific titles in
+  config/locales/en.yml. For more see:
+  https://github.com/calebthompson/title#usage
   %>
   <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
@@ -18,8 +18,10 @@
 <%= content_for(:extra_body_classes, 'type-system-sans') %>
 <body class="<%= body_class %>">
   <%= render 'refills/navigation' %>
-  <%= render "flashes" -%>
-  <%= yield %>
+  <div class="main_page_container">  
+    <%= render "flashes" -%>
+    <%= yield %>
+  </div>  
   <%= render "javascript" %>
   <%= render "css_overrides" %>
 </body>
