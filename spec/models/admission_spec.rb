@@ -40,7 +40,7 @@ RSpec.describe Admission, type: :model do
     admission = build :admission, industry__sales_potential: nil
     expect(admission).not_to be_valid
   end
-  
+
   it 'is valid when final is false' do
     admission = build :admission, final: false
     expect(admission).to be_valid

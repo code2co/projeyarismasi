@@ -33,17 +33,17 @@ RSpec.describe Review, type: :model do
     review = create :review
     expect(review).to be_valid
   end
-  
+
   it 'is not valid with final is true and another field is empty' do
     review = build :review, idea__verification: nil
     expect(review).not_to be_valid
   end
-  
+
   it 'is valid when all fields are present yet final is false' do
     review = build :review, final: false
     expect(review).to be_valid
   end
-  
+
   it { should validate_numericality_of(:genuine_idea__research).is_less_than_or_equal_to(50) }
   it { should validate_numericality_of(:genuine_idea__proof).is_less_than_or_equal_to(50) }
   it { should validate_numericality_of(:genuine_idea__processes).is_less_than_or_equal_to(50) }
@@ -60,5 +60,5 @@ RSpec.describe Review, type: :model do
   it { should validate_numericality_of(:industry__physibility).is_less_than_or_equal_to(80) }
   it { should validate_numericality_of(:industry__sales_potential).is_less_than_or_equal_to(40) }
   it { should validate_numericality_of(:industry__added_value).is_less_than_or_equal_to(40) }
-  
+
 end

@@ -32,6 +32,14 @@ body {
   .breadcrumb {
     @include margin(null null 1em null);
   }
+  .logos {
+    text-align: center;
+    @include margin(auto null 30px null);
+    img {
+      width: 200px;
+      margin: 20px;
+    }
+  }
 }
 
 hr {
