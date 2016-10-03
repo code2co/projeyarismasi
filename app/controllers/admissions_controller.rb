@@ -1,8 +1,6 @@
 class AdmissionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_admission, except: :new
-  before_action :check_user_is_applicant
-  before_action :check_admission_user, only: [:create]
+  before_action :set_admission, only: :show
   add_breadcrumb "Ana Sayfa", :root_path
 
   def show
@@ -15,8 +13,8 @@ class AdmissionsController < ApplicationController
   end
 
   def create
-    authorize! :create,  @admission
     @admission = Admission.create(admission_params)
+    authorize! :create,  @admission
     redirect_to admission_build_path(:summary, admission_id: @admission.id)
   end
 
@@ -29,7 +27,7 @@ class AdmissionsController < ApplicationController
   end
 
   def admission_params
-    params.require(:admission).permit(:subject)
+    params.require(:admission).permit(:subject, :user_id)
   end
 
   def check_user_is_applicant
@@ -38,7 +36,4 @@ class AdmissionsController < ApplicationController
     end
   end
 
-  def check_admission_user
-    redirect_to root_path, flash: { error: "Bu başvurunun kullanıcısı siz değilsiniz" }, if: @admission.user != current_user
-  end
 end

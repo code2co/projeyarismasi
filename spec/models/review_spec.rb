@@ -43,7 +43,7 @@ RSpec.describe Review, type: :model do
     review = build :review, final: false
     expect(review).to be_valid
   end
-  
+
   context 'if final' do
     before(:example) { allow(subject).to receive(:final?).and_return true }
     it { should validate_numericality_of(:genuine_idea__research).is_less_than_or_equal_to(50) }

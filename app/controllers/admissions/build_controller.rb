@@ -25,7 +25,7 @@ class Admissions::BuildController < ApplicationController
 
   private
   def set_admission
-    @admission = Admission.find(params[:admission_id])
+    @admission = Admission.includes(:user).find(params[:admission_id])
   end
 
   def admission_params

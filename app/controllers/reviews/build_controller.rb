@@ -32,7 +32,7 @@ class Reviews::BuildController < ApplicationController
   end
 
   def review_params
-    params.require(:review).transform_values! { |x| x.to_i }.permit(
+    params.require(:review).permit(
       :genuine_idea__research,
       :genuine_idea__proof,
       :genuine_idea__processes,

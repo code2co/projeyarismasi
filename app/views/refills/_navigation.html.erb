@@ -16,21 +16,25 @@
               <li><a href="#">Şartname</a></li>
             </ul>
           </li>
-          <li class="nav-link"><a href="javascript:void(0)">İletişim</a></li>
+          <li class="nav-link"><%= link_to "İletişim", page_path("iletisim") %></li>
           <% if user_signed_in? %>
-          <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">Hesabım</a>
-            <ul class="submenu">
-              <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
-              <li class="nav-link"><%= link_to "Çıkış Yap", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-          <% if current_user.applicant? %>
-          <li class="nav-link"><button class="application-btn"><%= link_to "Yeni Başvuru", new_admission_path %></button></li>
-          <% end %>
+            <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">Hesabım</a>
+              <ul class="submenu">
+                <li class="nav-link"><a href="javascript:void(0)">Hesabım</a></li>
+                <li class="nav-link"><%= link_to "Çıkış Yap", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+            <% if current_user.applicant? %>
+              <li class="nav-link"><button class="application-btn"><%= link_to "Yeni Başvuru", new_admission_path %></button></li>
+            <% elsif current_user.reviewer? %>
+              <li class="nav-link"><button class="application-btn">Hakem Link</button></li>
+            <% else %>
+              <li class="nav-link"><button><%= link_to "Yönetim", rails_admin_path %></button></li>
+            <% end %>
           <% else %>
-          <li class="nav-link"><button><%= link_to "Giriş Yap", new_user_session_path %></button></li>
+            <li class="nav-link"><button><%= link_to "Giriş Yap", new_user_session_path %></button></li>
           <% end %>
-        </nav>
-      </div>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
