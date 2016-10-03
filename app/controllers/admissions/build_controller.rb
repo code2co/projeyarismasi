@@ -5,6 +5,7 @@ class Admissions::BuildController < ApplicationController
   steps :subject, :summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 
   def show
+    authorize! :read, @admission
     render_wizard
   end
 
@@ -14,8 +15,12 @@ class Admissions::BuildController < ApplicationController
   end
 
   def update
-    @admission.update_attributes(admission_params)
-    render_wizard @admission
+    authorize! :update, @admission
+    if @admission.update_attributes(admission_params)
+      render_wizard @admission
+    else
+      render_wizard @admission, alert: "Kayıt Güncellenemedi"
+    end
   end
 
   private

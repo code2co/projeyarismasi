@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "AdmissionManagements", type: :feature do
-  let (:applicant) { create :user, role: 1 }
+  let (:applicant) { create :user, role: 0 }
 
   before :context do
     login_as :applicant, scope: :user
@@ -9,10 +9,7 @@ RSpec.feature "AdmissionManagements", type: :feature do
 
   context 'can create admission as an applicant' do
     scenario "initializes an admission" do
-      # visit root path
-      # click new admission button
-      # fill in steps
-      # expect admissions count to be increased by 1
+      # Test 
     end
   end
 end

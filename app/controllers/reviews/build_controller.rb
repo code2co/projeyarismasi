@@ -7,12 +7,17 @@ class Reviews::BuildController < ApplicationController
   steps :subject_summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 
   def show
+    authorize! :read, @review
     render_wizard
   end
 
   def update
-    @review.update_attributes(review_params)
-    render_wizard @review
+    authorize! :update, @review
+    if @review.update_attributes(review_params)
+      render_wizard @review
+    else
+      render_wizard @review, alert: "Kayıt güncellenemedi"
+    end
   end
 
 
@@ -23,11 +28,11 @@ class Reviews::BuildController < ApplicationController
   end
 
   def set_review
-    @review = Review.find(params[:review_id])
+    @review = Review.includes(:user).find(params[:review_id])
   end
 
   def review_params
-    params.require(:review).permit(
+    params.require(:review).transform_values! { |x| x.to_i }.permit(
       :genuine_idea__research,
       :genuine_idea__proof,
       :genuine_idea__processes,

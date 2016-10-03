@@ -46,8 +46,8 @@ RSpec.describe Admission, type: :model do
     expect(admission).to be_valid
   end
 
-  context 'if_final' do
-    before { allow(subject).to receive(:final?).and_return true }
+  context 'validates presence of fields once admission is final' do
+    before(:example) { allow(subject).to receive(:final?).and_return true }
     it { should validate_presence_of(:subject                                      )}
     it { should validate_presence_of(:summary                                      )}
     it { should validate_presence_of(:genuine_idea__research                       )}

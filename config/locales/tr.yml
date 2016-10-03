@@ -17,3 +17,19 @@ tr:
 
   titles:
     application: EMO Proje Yarışması Portalı
+
+  activerecord:
+    attributes:
+      user/role:
+        applicant: "Başvuru Sahibi"
+        volunteer: "Gönüllü"
+
+  wicked:
+    subject_summary: "Konu ve Proje Özeti"
+    genuine_idea: "Özgün Fikir"
+    innovativeness: "Yenilikçilik"
+    idea: "Fikirden Projeye"
+    industry: "Endüstriyelleşme"
+    final: "Tamamlama"
+    subject: "Konu"
+    summary: "Özet"

@@ -61,10 +61,9 @@ class Admission < ApplicationRecord
   validates :industry__added_value, presence: true, if: :final?                        
   validates :final, presence: true, if: :final?                                        
   validates :bio, presence: true, if: :final?
-  
+
   def final?
     self.final == true
   end
 
 end
-                                      

@@ -1,35 +1,35 @@
 <%= render :partial => "refills/review_tabs" %>
 <h1>Özgün Fikrin Yaratılması</h1>
 <%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
-<div class="grid-items-lines">
-  <div class="grid-item grid-item-big">
-    <h2>1a. Projede özgün ve yenilikçilik adına yapılan araştırmalar</h2>
-    <p><%= @admission.genuine_idea__research %></p>
+  <div class="grid-items-lines">
+    <div class="grid-item grid-item-big">
+      <h2>1a. Projede özgün ve yenilikçilik adına yapılan araştırmalar</h2>
+      <p><%= @admission.genuine_idea__research %></p>
+    </div>
+    <div class="grid-item">
+      <h2>Değerlendirme Puanı</h2>
+      <%= f.input :genuine_idea__research, label: false %>
+    </div>
+    <div class="grid-item grid-item-big">
+      <h2>1b. Proje fikrinin dayandığı özgünlük gerekçeleri, dayanaklar</h2>
+      <p><%= @admission.genuine_idea__proof %></p>
+    </div>
+    <div class="grid-item">
+      <h2>Değerlendirme Puanı</h2>
+      <%= f.input :genuine_idea__proof, label: false %>
+    </div>
+    <div class="grid-item grid-item-big">
+      <h2>1c. Özgün ve yenilikçi fikrin, uygulanabilirlik analizi ve izlenen süreçler</h2>
+      <p><%= @admission.genuine_idea__processes %></p>
+    </div>
+    <div class="grid-item">
+      <h2>Değerlendirme Puanı</h2>
+      <%= f.input :genuine_idea__processes, label: false %>
+    </div>
+    <div class="right-cover"></div>
+    <div class="bottom-cover"></div>
   </div>
-  <div class="grid-item">
-    <h2>Değerlendirme Puanı</h2>
-    <%= f.input :genuine_idea__research, label: false %>
+  <div class="grid-item-max">
+    <%= f.button :submit, "Kaydet >>>" %>
   </div>
-  <div class="grid-item grid-item-big">
-    <h2>1b. Proje fikrinin dayandığı özgünlük gerekçeleri, dayanaklar</h2>
-    <p><%= @admission.genuine_idea__proof %></p>
-  </div>
-  <div class="grid-item">
-    <h2>Değerlendirme Puanı</h2>
-    <%= f.input :genuine_idea__proof, label: false %>
-  </div>
-  <div class="grid-item grid-item-big">
-    <h2>1c. Özgün ve yenilikçi fikrin, uygulanabilirlik analizi ve izlenen süreçler</h2>
-    <p><%= @admission.genuine_idea__processes %></p>
-  </div>
-  <div class="grid-item">
-    <h2>Değerlendirme Puanı</h2>
-    <%= f.input :genuine_idea__processes, label: false %>
-  </div>
-  <div class="right-cover"></div>
-  <div class="bottom-cover"></div>
-</div>
-<div class="grid-item-max">
-  <%= f.button :submit, "Kaydet >>>" %>
-</div>
 <% end %>
