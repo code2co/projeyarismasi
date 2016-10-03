@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_admission
+  before_action :set_admission, except: :my_reviews
 
   def new
     @review = Review.new
@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
     @review = Review.create(review_params)
     @review.admission = @admission
     redirect_to admission_review_build_path(:subject_summary, admission_id: @admission.id, review_id: @review.id)
+  end
+
+  def my_reviews
+    @reviews = current_user.reviews
   end
 
   private

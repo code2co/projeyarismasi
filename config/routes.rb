@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       resources :build, controller: "reviews/build"
     end
   end
+
+  get "reviews/my_reviews", to: "reviews#my_reviews", as: 'my_reviews'
 end

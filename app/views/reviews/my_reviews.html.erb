@@ -1,0 +1,19 @@
+<h2><%= current_user.email %> hakemine ait gözden geçirmeler</h2>
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="width: 70%">Proje Adı ve Bilgiler</th>
+      <th style="width: 30%">Gözden Geçirmenin Durumu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= link_to review.admission.subject, admission_review_build_path(:subject_summary, admission_id: review.admission_id, review_id: review.id) %></td>
+        <td><%= review.final %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
