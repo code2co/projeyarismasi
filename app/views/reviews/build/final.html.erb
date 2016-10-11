@@ -1,0 +1,23 @@
+<%= render :partial => "refills/review_tabs" %>
+<% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "hata") %> bu başvurunun yapılmasını engelledi:</h2>
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="review_final_container">
+  <p>Lütfen devam etmeden önce bu projeye verdiğiniz puanları inceleyin. Tamamlanan hakem raporları üzerinde düzeltme yapılamamaktadır.</p>
+  <div class="review_result">
+    <h2>Bu başvuruya şimdiye kadar <span style="font-size:4em">580</span> puan verdiniz.</h2>
+  </div>
+  <div class="final_container__switch">
+    <%= simple_form_for [ @admission, @review ], url: admission_review_build_path, method: :put do |f| %>
+      <%= f.input :final, label: "Gözden geçirmeyi tamamladım.", input_html: { class: "admission_final" } %>
+      <%= f.button :submit, "Gözden geçirmeyi portala gönder", id: "review_final_btn" %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 <%= render :partial => "refills/admission_tabs" %>
 <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
 <%= f.input :subject, label: "Projenin Konusu" %>
+<%= f.input :bio, label: "Proje Ekibinin Özgeçmişleri", input_html: { rows: 20 } %>
 <%= f.button :submit, 'Sonraki Adıma Geç' %>
 <% end %>
 

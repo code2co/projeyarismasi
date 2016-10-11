@@ -1,0 +1,18 @@
+<h2><%= current_user.email %>'a ait proje başvuruları</h2>
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="width: 60%">Proje Adı ve Bilgiler</th>
+      <th style="width: 40%">Proje Durumu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admissions.each do |admission| %>
+      <tr>
+        <td><%= link_to admission.subject, admission_build_path(:subject, admission_id: admission.id), disabled: true %></td>
+        <td><%= admission_state(admission.final) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

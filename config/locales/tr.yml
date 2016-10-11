@@ -20,9 +20,38 @@ tr:
 
   activerecord:
     attributes:
-      user/role:
-        applicant: "Başvuru Sahibi"
-        volunteer: "Gönüllü"
+      user:
+        subject: "Konu"
+        summary: "Özet"
+        genuine_idea__research: "Özgün Fikir / Araştırma"
+        genuine_idea__proof: "Özgün Fikir / Kanıtlar"
+        genuine_idea__processes: "Özgün Fikir / Süreçler"
+        innovativeness__target_user_expectations: "Özgün Fikir / Kullanıcı Beklentileri"
+        innovavativeness__genuine: "Yenilikçilik / Özgünlük"
+        innovativeness__similarity_to_other_projects: "Yenilikçilik / Diğer projelere benzerlik"
+        innovativeness__benefits_to_users: "Yenilikçilik / Kullanıcılara Faydalılık"
+        innovativeness__research: "Yenlikçilik / Yapılan Araştırmalar"
+        idea__short_history: "Fikirden Projeye / Süreç"
+        idea__tecniques_methods: "Fikirden Projeye / Teknikler & Metodlar"
+        idea__verification: "Fikirden Projeye / Doğrulanma"
+        idea__cost_cutting_techniques: "Fikirden Projeye / Maliyet Düşürücü Teknikler"
+        idea__new_tech_cost_cutting_advantages: "Fikirden Projeye / Yeni Teknolojiler"
+        industry__market_potential: "Endüstriyelleşme / Pazar Potansiyeli"
+        industry__physibility: "Endüstriyelleşme / Fizibilite"
+        industry__sales_potential: "Endüstriyelleşme / Satış Potansiyeli"
+        industry__added_value: "Endüstriyelleşme / Katma Değer"
+        final: "Tamamlandı Kutucuğu"
+        bio: "Proje Ekibinin Özgeçmişleri"
+    models:
+      user:
+        one: "Kullanıcı"
+        other: "Kullanıcılar"
+      admission:
+        one: "Proje Başvurusu"
+        other: "Proje Başvuruları"
+      review:
+        one: "Değerlendirme"
+        other: "Değerlendirmeler"
 
   wicked:
     subject_summary: "Konu ve Proje Özeti"
@@ -33,3 +62,5 @@ tr:
     final: "Tamamlama"
     subject: "Konu"
     summary: "Özet"
+
+

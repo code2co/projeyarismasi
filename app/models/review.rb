@@ -78,4 +78,8 @@ class Review < ApplicationRecord
   def final?
     self.final == true
   end
+
+  def final_score
+
+  end
 end

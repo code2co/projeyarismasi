@@ -14,3 +14,14 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+$(document).ready(function(){
+  $("input:submit#admission_final_btn").prop("disabled", true);
+  $("input#admission_final").on("change", function(){
+    if ($(this).prop('checked') == true) {
+      $("input:submit#admission_final_btn").prop("disabled", false);
+    } else {
+      $("input:submit#admission_final_btn").prop("disabled", true);
+    }
+  });
+});

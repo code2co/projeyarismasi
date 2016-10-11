@@ -15,6 +15,7 @@
 @import "refills/accordion-tabs-minimal";
 @import "refills/grid-items-lines";
 @import "refills/tables";
+@import "refills/switch";
 @import "components/devise";
 
 body {
@@ -54,4 +55,17 @@ header.navigation ul li.nav-link button {
   &.application-btn {
     background-color: green;
   }
-} 
+}
+
+.review_final_container {
+  .review_result {
+    @include margin(2em null 2em null);
+    @include span-columns(8);
+    @include shift(2);
+  }
+  .final_container__switch {
+    @include span-columns(8);
+  }
+}
+
+

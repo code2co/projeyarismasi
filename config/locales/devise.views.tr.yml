@@ -11,6 +11,8 @@ tr:
         unlock_token: 
     models:
       user: Kullanıcı
+      admission: Başvuru
+      review:  Değerlendirme
   devise:
     confirmations:
       confirmed: Hesabınız başarıyla onaylandı. Şu an giriş yapmış bulunuyorsunuz.

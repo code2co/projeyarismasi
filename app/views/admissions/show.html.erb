@@ -1,18 +1,3 @@
-<%= render :partial => "refills/admission_tabs" %>
-<% if @admission.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@admission.errors.count, "hata") %> bu başvurunun yapılmasını engelledi:</h2>
-    <ul>
-    <% @admission.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-<div class="final_container">
-  <h2>Proje Başvurusu Tamamlanıyor</h2>
-  <p>Lütfen devam etmeden önce proje başvurunuzu inceleyin. Gözden geçirme için gönderilen başvurular üzerinde düzeltme / ekleme yapılamamaktadır.</p>
-  <hr></hr>
   <h3>Proje Konusu</h3>
   <%= simple_format(@admission.subject) %>
   <h3>Proje Özeti</h3>
@@ -53,11 +38,4 @@
   <%= simple_format(@admission.industry__sales_potential) %>
   <h3>Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi</h3>
   <%= simple_format(@admission.industry__added_value) %>
-  <hr>
-  <div class="final_container__switch">
-    <%= simple_form_for @admission, url: admission_build_path, method: :put do |f| %>
-      <%= f.input :final, label: "Bu verilerin projemi tümüyle yansıttığını kabul ediyorum.", input_html: { class: "admission_final" } %>
-      <%= f.button :submit, "Projeyi Tamamla ve Gözden Geçirmeye Gönder", id: "admission_final_btn" %>
-    <% end %>
-  </div>
-</div>
+

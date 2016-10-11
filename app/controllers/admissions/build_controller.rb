@@ -17,7 +17,11 @@ class Admissions::BuildController < ApplicationController
   def update
     authorize! :update, @admission
     if @admission.update_attributes(admission_params)
-      render_wizard @admission
+      if @admission.final?
+        redirect_to root_path, notice: 'Proje başvurunuz başarıyla yüklendi.'
+      else
+        render_wizard @admission
+      end
     else
       render_wizard @admission, alert: "Kayıt Güncellenemedi"
     end
@@ -25,7 +29,7 @@ class Admissions::BuildController < ApplicationController
 
   private
   def set_admission
-    @admission = Admission.includes(:user).find(params[:admission_id])
+    @admission = Admission.find(params[:admission_id])
   end
 
   def admission_params
@@ -49,7 +53,8 @@ class Admissions::BuildController < ApplicationController
       :industry__physibility,
       :industry__sales_potential,
       :industry__added_value,
-      :final
+      :final,
+      :bio
     )
   end
 end

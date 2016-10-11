@@ -7,13 +7,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    byebug
     @review = Review.create(review_params)
-    @review.admission = @admission
     redirect_to admission_review_build_path(:subject_summary, admission_id: @admission.id, review_id: @review.id)
   end
 
   def my_reviews
-    @reviews = current_user.reviews
+    @reviews = current_user.reviews.includes(:admission)
   end
 
   private

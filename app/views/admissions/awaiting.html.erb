@@ -1,0 +1,15 @@
+<h2>Hakem Atanmasını Bekleyen Proje Başvuruları</h2>
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Proje Adı</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admissions.each do |admission| %>
+      <tr>
+        <td><%= link_to admission.subject, admission_path(admission) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

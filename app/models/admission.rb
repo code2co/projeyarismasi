@@ -38,28 +38,30 @@
 #
 
 class Admission < ApplicationRecord
+  scope :active, -> { where(final: true) }
+  scope :does_not_have_reviews, -> { joins('LEFT JOIN reviews ON reviews.admission_id = admissions.id').where('reviews.id IS NULL') }
   belongs_to :user
   has_many :reviews
-  validates :subject, presence: true, if: :final?                                      
-  validates :summary, presence: true, if: :final?                                      
-  validates :genuine_idea__research, presence: true, if: :final?                       
-  validates :genuine_idea__proof, presence: true, if: :final?                          
-  validates :genuine_idea__processes, presence: true, if: :final?                      
-  validates :innovativeness__target_user_expectations, presence: true, if: :final?     
-  validates :innovavativeness__genuine, presence: true, if: :final?                    
-  validates :innovativeness__similarity_to_other_projects, presence: true, if: :final? 
-  validates :innovativeness__benefits_to_users, presence: true, if: :final?            
-  validates :innovativeness__research, presence: true, if: :final?                     
-  validates :idea__short_history, presence: true, if: :final?                          
-  validates :idea__tecniques_methods, presence: true, if: :final?                      
-  validates :idea__verification, presence: true, if: :final?                           
-  validates :idea__cost_cutting_techniques, presence: true, if: :final?                
-  validates :idea__new_tech_cost_cutting_advantages, presence: true, if: :final?       
-  validates :industry__market_potential, presence: true, if: :final?                   
-  validates :industry__physibility, presence: true, if: :final?                        
-  validates :industry__sales_potential, presence: true, if: :final?                    
-  validates :industry__added_value, presence: true, if: :final?                        
-  validates :final, presence: true, if: :final?                                        
+  validates :subject, presence: true, if: :final?
+  validates :summary, presence: true, if: :final?
+  validates :genuine_idea__research, presence: true, if: :final?
+  validates :genuine_idea__proof, presence: true, if: :final?
+  validates :genuine_idea__processes, presence: true, if: :final?
+  validates :innovativeness__target_user_expectations, presence: true, if: :final?
+  validates :innovavativeness__genuine, presence: true, if: :final?
+  validates :innovativeness__similarity_to_other_projects, presence: true, if: :final?
+  validates :innovativeness__benefits_to_users, presence: true, if: :final?
+  validates :innovativeness__research, presence: true, if: :final?
+  validates :idea__short_history, presence: true, if: :final?
+  validates :idea__tecniques_methods, presence: true, if: :final?
+  validates :idea__verification, presence: true, if: :final?
+  validates :idea__cost_cutting_techniques, presence: true, if: :final?
+  validates :idea__new_tech_cost_cutting_advantages, presence: true, if: :final?
+  validates :industry__market_potential, presence: true, if: :final?
+  validates :industry__physibility, presence: true, if: :final?
+  validates :industry__sales_potential, presence: true, if: :final?
+  validates :industry__added_value, presence: true, if: :final?
+  validates :final, presence: true, if: :final?
   validates :bio, presence: true, if: :final?
 
   def final?

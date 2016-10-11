@@ -1,0 +1,11 @@
+<h3>Proje Konusu</h3>
+<%= simple_format(@admission.subject) %>
+<h3>Proje Özeti</h3>
+<%= simple_format(@admission.summary) %>
+
+<h2>Lütfen proje için hakem seçiniz</h2>
+
+<%= form_for @review, url: admission_reviews_path(admission_id: @admission.id) do |f| %>
+  <%= f.select :user_id, User.reviewer.all.collect { |u| [u.email, u.id]} %>
+  <%= f.submit "Projeye hakem ata" %>
+<% end %>

@@ -10,7 +10,7 @@
     <% @reviews.each do |review| %>
       <tr>
         <td><%= link_to review.admission.subject, admission_review_build_path(:subject_summary, admission_id: review.admission_id, review_id: review.id) %></td>
-        <td><%= review.final %></td>
+        <td><%= review.final.to_s %></td>
       </tr>
     <% end %>
   </tbody>

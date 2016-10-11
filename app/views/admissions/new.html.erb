@@ -1,6 +1,7 @@
 <%= render "application/breadcrumb" %>
 <%= simple_form_for @admission do |f| %>
 <%= f.input :subject, label: "Proje Konusu", placeholder: "Lütfen oluşturmak istediğiniz projenin konusunu giriniz.", input_html: { rows: 10 } %>
+<%= f.input :bio, label: "Proje ekibinin kısa özgeçmişlerini yazınız", input_html: { rows: 20 } %>
 <%= f.hidden_field :user_id, value: current_user.id.to_s %>
 <%= f.button :submit, "Proje Başvurusuna Başla" %>
 <% end %>
