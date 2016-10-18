@@ -96,7 +96,7 @@ class Review < ApplicationRecord
     self.industry__market_potential,
     self.industry__physibility,
     self.industry__sales_potential,
-    self.industry__added_value].map{ |x| x == nil ? 0 : x }.reduce(:+)
+    self.industry__added_value].map(&:to_i).reduce(:+)
   end
 end
 
