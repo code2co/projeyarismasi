@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h2>Proje Başvurunuz Alındı</h2>
+  <p>Merhaba <%= @user.name %>,</p>
+  <p>EMO Bursa Şube EMO-Genç Özgün Proje Yarışmasına yapmış olduğunuz başvurunuz kabul edildi. Başvurunuzun durumunu bu <a href="<%= admission_url(@admission) %>">linkten</a> takip edebilirsiniz.</p>
+  <p>
+    Yarışmamıza göstermiş olduğunuz ilgiden ötürü teşekkür ediyoruz.
+    Saygılarımızla,
+    EMO Bursa Şubesi Özgün Proje Yarışması Ekibi
+  </p>
+</body>
+</html>

@@ -40,6 +40,7 @@
 class Admission < ApplicationRecord
   scope :active, -> { where(final: true) }
   scope :does_not_have_reviews, -> { joins('LEFT JOIN reviews ON reviews.admission_id = admissions.id').where('reviews.id IS NULL') }
+  scope :has_reviews_completed, -> { joins(:reviews).where("reviews.id IS NOT NULL AND reviews.final IS TRUE") }
   belongs_to :user
   has_many :reviews
   validates :subject, presence: true, if: :final?

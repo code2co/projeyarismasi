@@ -13,3 +13,25 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<h2>Değerlendirmesi Yeni Tamamlanan Proje Başvuruları</h2>
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Proje Adı</th>
+      <th>Hakemler</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviewed_admissions.each do |admission| %>
+      <tr>
+        <td><%= link_to admission.subject, admission_path(admission) %></td>
+        <td>
+          <% admission.reviews.where(final: true).each do |review| %>
+            <%= link_to review.user.name, admission_review_build_path(:final, admission_id: admission.id, review_id: review.id) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

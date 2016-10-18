@@ -12,7 +12,7 @@
 <div class="review_final_container">
   <p>Lütfen devam etmeden önce bu projeye verdiğiniz puanları inceleyin. Tamamlanan hakem raporları üzerinde düzeltme yapılamamaktadır.</p>
   <div class="review_result">
-    <h2>Bu başvuruya şimdiye kadar <span style="font-size:4em">580</span> puan verdiniz.</h2>
+    <h2>Bu başvuruya şimdiye kadar <span style="font-size:4em"><%= @review.final_score %></span> puan verdiniz.</h2>
   </div>
   <div class="final_container__switch">
     <%= simple_form_for [ @admission, @review ], url: admission_review_build_path, method: :put do |f| %>

@@ -80,6 +80,25 @@ class Review < ApplicationRecord
   end
 
   def final_score
-
+    [self.genuine_idea__research,
+    self.genuine_idea__proof,
+    self.genuine_idea__processes,
+    self.innovativeness__target_user_expectations,
+    self.innovavativeness__genuine,
+    self.innovativeness__similarity_to_other_projects,
+    self.innovativeness__benefits_to_users,
+    self.innovativeness__research,
+    self.idea__short_history,
+    self.idea__tecniques_methods,
+    self.idea__verification,
+    self.idea__cost_cutting_techniques,
+    self.idea__new_tech_cost_cutting_advantages,
+    self.industry__market_potential,
+    self.industry__physibility,
+    self.industry__sales_potential,
+    self.industry__added_value].map{ |x| x == nil ? 0 : x }.reduce(:+)
   end
 end
+
+
+

@@ -25,6 +25,7 @@ class AdmissionsController < ApplicationController
 
   def awaiting
     @admissions = Admission.active.does_not_have_reviews
+    @reviewed_admissions = Admission.includes(reviews: [ :user ]).has_reviews_completed.order(created_at: :desc).first(10)
   end
 
   def reviewer_select
