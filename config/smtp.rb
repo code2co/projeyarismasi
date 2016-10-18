@@ -1,11 +1,11 @@
 SMTP_SETTINGS = {
-  # address: localhost
-  # authentication: :plain,
-  # # domain: ENV.fetch("SMTP_DOMAIN"), # example: "heroku.com"
-  # enable_starttls_auto: true,
-  # password: ENV.fetch("SMTP_PASSWORD"),
-  # port: "587",
-  # user_name: ENV.fetch("SMTP_USERNAME")
+  :user_name => ENV["SENDGRID_USERNAME"],
+  :password => ENV["SENDGRID_PASSWORD"],
+  :domain => 'projeyarismasi.herokuapp.com',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
 }
 
 # if ENV["EMAIL_RECIPIENTS"].present?

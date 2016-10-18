@@ -18,6 +18,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
   config.include Warden::Test::Helpers
+  config.include Capybara::DSL
 end
 
 ActiveRecord::Migration.maintain_test_schema!

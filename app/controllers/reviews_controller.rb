@@ -7,9 +7,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    byebug
-    @review = Review.create(review_params)
-    redirect_to admission_review_build_path(:subject_summary, admission_id: @admission.id, review_id: @review.id)
+    params["review"].each do |review|
+      if review["user_id"].to_i != 0
+        @review = Review.create(user_id: review["user_id"].to_i, admission_id: @admission.id)
+      end
+    end
+    redirect_to root_path, notice: "Tüm gözden geçirmeler oluşturuldu ve hakemlere e-posta gönderildi"
   end
 
   def my_reviews

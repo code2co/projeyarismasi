@@ -15,7 +15,7 @@ gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "sprockets", ">= 3.0.0"
-gem "sprockets-es6"
+# gem "sprockets-es6"
 gem "suspenders"
 gem "title"
 gem "uglifier"
@@ -73,3 +73,5 @@ gem 'devise-i18n'
 gem 'access-granted', '~> 1.1'
 gem 'rails-i18n', '~> 5.0', '>= 5.0.1'
 gem 'rails_admin', '~> 1.0'
+gem 'coffee-rails'
+gem 'figaro'

@@ -1,29 +1,32 @@
 FactoryGirl.define do
   factory :user do
+    email { Faker::Internet.email }
+    password "12345678"
+    confirmed_at Time.now
   end
-  
+
   factory :review do
     admission
-    genuine_idea__research 49                       
-    genuine_idea__proof 49                          
-    genuine_idea__processes 49                      
-    innovativeness__target_user_expectations 20     
-    innovavativeness__genuine 20                    
+    genuine_idea__research 49
+    genuine_idea__proof 49
+    genuine_idea__processes 49
+    innovativeness__target_user_expectations 20
+    innovavativeness__genuine 20
     innovativeness__similarity_to_other_projects 20
-    innovativeness__benefits_to_users 20            
-    innovativeness__research 20                     
-    idea__short_history 79                          
-    idea__tecniques_methods 79                      
-    idea__verification 79                           
-    idea__cost_cutting_techniques 79                
-    idea__new_tech_cost_cutting_advantages 79      
-    industry__market_potential 40                   
-    industry__physibility 80                        
-    industry__sales_potential 40                    
-    industry__added_value 40                        
-    final true                                        
+    innovativeness__benefits_to_users 20
+    innovativeness__research 20
+    idea__short_history 79
+    idea__tecniques_methods 79
+    idea__verification 79
+    idea__cost_cutting_techniques 79
+    idea__new_tech_cost_cutting_advantages 79
+    industry__market_potential 40
+    industry__physibility 80
+    industry__sales_potential 40
+    industry__added_value 40
+    final true
   end
-  
+
   factory :admission do
     subject { Faker::Lorem.sentence }
     summary { Faker::Lorem.paragraph }
