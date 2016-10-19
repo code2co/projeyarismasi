@@ -16,6 +16,7 @@
   </div>
   <div class="final_container__switch">
     <%= simple_form_for [ @admission, @review ], url: admission_review_build_path, method: :put do |f| %>
+      <%= f.input :comments, label: "Opsiyonel: Bu projeye dair yorumlarınız", input_html: { rows: 5 }  %>
       <%= f.input :final, label: "Gözden geçirmeyi tamamladım.", input_html: { class: "admission_final" } %>
       <%= f.button :submit, "Gözden geçirmeyi portala gönder", id: "review_final_btn" %>
     <% end %>

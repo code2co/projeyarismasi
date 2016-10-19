@@ -20,6 +20,10 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  name                   :string
+#  university             :string
+#  department             :string
+#  mobile_phone           :string
+#  unconfirmed_email      :string
 #
 # Indexes
 #
@@ -34,6 +38,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true
+  validates :university, presence: true
+  validates :department, presence: true
+  validates :mobile_phone, presence: true
+  validates :role, presence: true
   enum role: [:applicant, :reviewer, :volunteer, :admin]
   has_many :admissions
   has_many :reviews

@@ -1,9 +1,16 @@
 FactoryGirl.define do
+  factory :batch do
+    due_date { Faker::Date.forward(100)}
+  end
+
   factory :user do
     email { Faker::Internet.email }
     password "12345678"
     confirmed_at Time.now
     name { Faker::Name.name}
+    university "Uludağ Üniversitesi"
+    department "Elektrik Mühendisliği"
+    mobile_phone "5412809556"
   end
 
   factory :review do
@@ -29,6 +36,7 @@ FactoryGirl.define do
   end
 
   factory :admission do
+    batch
     subject { Faker::Lorem.sentence }
     summary { Faker::Lorem.paragraph }
     genuine_idea__research { Faker::Lorem.paragraph }

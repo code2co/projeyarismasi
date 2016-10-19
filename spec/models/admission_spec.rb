@@ -36,6 +36,12 @@ RSpec.describe Admission, type: :model do
     expect(admission).to be_valid
   end
 
+  it 'is assigned a batch' do
+    batch = create :batch
+    admission = create :admission
+    expect(admission.batch).to eq batch
+  end
+
   it "is not valid without industry sales potential, yet final is true" do
     admission = build :admission, industry__sales_potential: nil
     expect(admission).not_to be_valid

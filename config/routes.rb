@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
   root 'welcome#index'
   get "reviews/my_reviews", to: "reviews#my_reviews", as: 'my_reviews'
 

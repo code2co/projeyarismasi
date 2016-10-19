@@ -27,22 +27,35 @@
 #  updated_at                                   :datetime         not null
 #  user_id                                      :integer
 #  bio                                          :text
+#  batch_id                                     :integer
+#  grant_request                                :boolean          default(FALSE)
+#  file_file_name                               :string
+#  file_content_type                            :string
+#  file_file_size                               :integer
+#  file_updated_at                              :datetime
+#  token                                        :string
 #
 # Indexes
 #
-#  index_admissions_on_user_id  (user_id)
+#  index_admissions_on_batch_id  (batch_id)
+#  index_admissions_on_token     (token) UNIQUE
+#  index_admissions_on_user_id   (user_id)
 #
 # Foreign Keys
 #
 #  fk_rails_70fabbe2ae  (user_id => users.id)
+#  fk_rails_88d834636b  (batch_id => batches.id)
 #
 
 class Admission < ApplicationRecord
   scope :active, -> { where(final: true) }
   scope :does_not_have_reviews, -> { joins('LEFT JOIN reviews ON reviews.admission_id = admissions.id').where('reviews.id IS NULL') }
   scope :has_reviews_completed, -> { joins(:reviews).where("reviews.id IS NOT NULL AND reviews.final IS TRUE") }
+  belongs_to :batch
   belongs_to :user
   has_many :reviews
+  after_create :assign_batch
+  before_create :assign_token
   validates :subject, presence: true, if: :final?
   validates :summary, presence: true, if: :final?
   validates :genuine_idea__research, presence: true, if: :final?
@@ -64,9 +77,23 @@ class Admission < ApplicationRecord
   validates :industry__added_value, presence: true, if: :final?
   validates :final, presence: true, if: :final?
   validates :bio, presence: true, if: :final?
+  has_attached_file :file, styles: {thumbnail: "60x60#"}
+  validates_attachment :file, content_type: { content_type: "application/pdf" }
+  validates_attachment :file, size: { less_than: 3.megabytes }
 
   def final?
     self.final == true
+  end
+
+  def assign_token
+    self.token = loop do
+      random_token = SecureRandom.hex(4)
+      break random_token unless Admission.exists?(token: random_token)
+    end
+  end
+
+  def assign_batch
+    self.batch = Batch.current
   end
 
 end

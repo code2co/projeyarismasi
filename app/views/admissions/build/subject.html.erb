@@ -1,3 +1,4 @@
+Proje Kodu: <code><%= @admission.token %></code>
 <%= render :partial => "refills/admission_tabs" %>
 <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
 <%= f.input :subject, label: "Projenin Konusu" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017144759) do
+ActiveRecord::Schema.define(version: 20161019130733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,27 @@ ActiveRecord::Schema.define(version: 20161017144759) do
     t.text     "industry__sales_potential"
     t.text     "industry__added_value"
     t.boolean  "final"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
     t.integer  "user_id"
     t.text     "bio"
+    t.integer  "batch_id"
+    t.boolean  "grant_request",                                default: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "token"
+    t.index ["batch_id"], name: "index_admissions_on_batch_id", using: :btree
+    t.index ["token"], name: "index_admissions_on_token", unique: true, using: :btree
     t.index ["user_id"], name: "index_admissions_on_user_id", using: :btree
+  end
+
+  create_table "batches", force: :cascade do |t|
+    t.date     "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -81,6 +97,7 @@ ActiveRecord::Schema.define(version: 20161017144759) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.integer  "user_id"
+    t.text     "comments"
     t.index ["admission_id"], name: "index_reviews_on_admission_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
@@ -103,11 +120,16 @@ ActiveRecord::Schema.define(version: 20161017144759) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "name"
+    t.string   "university"
+    t.string   "department"
+    t.string   "mobile_phone"
+    t.string   "unconfirmed_email"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "admissions", "batches"
   add_foreign_key "admissions", "users"
   add_foreign_key "reviews", "users"
 end

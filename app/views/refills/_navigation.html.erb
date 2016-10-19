@@ -32,8 +32,8 @@
             <% if current_user.applicant? %>
               <li class="nav-link"><button class="application-btn"><%= link_to "Yeni Başvuru", new_admission_path %></button></li>
             <% elsif current_user.reviewer? %>
-              <li class="nav-link"><button class="application-btn">Hakem Link</button></li>
-            <% else %>
+              <li class="nav-link"><button class="application-btn"><%= link_to "Projeler", my_reviews_path %></button></li>
+            <% elsif current_user.admin? %>
               <li class="nav-link"><button><%= link_to "Yönetim", rails_admin_path %></button></li>
             <% end %>
           <% else %>

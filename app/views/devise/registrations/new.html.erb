@@ -1,3 +1,4 @@
+<img src="<%= asset_url("ll.png") %>" alt="Logo Image">
 <h2>Yeni Üye Kaydı</h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= f.error_notification %>
@@ -5,6 +6,9 @@
   <%= f.input :name, required: true, autofocus: true %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true, hint: ("#{@minimum_password_length} karakter içermelidir" if @minimum_password_length) %>
+  <%= f.input :university, collection: ['Balıkesir Üniversitesi', 'Bursa Teknik Üniversitesi', 'Uludağ Üniversitesi'], label: "Üniversite Seçimi", prompt: "Üniversitenizi Seçin" %>
+  <%= f.input :department, label: "Bölüm Seçimi", placeholder: "Bölümünüzü girin" %>
+  <%= f.input :mobile_phone, label: "Cep Telefonu", placeholder: "Cep Telefonunuzu Girin" %>
 </div>
 <div class="form-actions">
   <%= f.button :submit, I18n.t("devise.registrations.new") %>

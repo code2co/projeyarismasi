@@ -12,6 +12,7 @@
 <div class="final_container">
   <h2>Proje Başvurusu Tamamlanıyor</h2>
   <p>Lütfen devam etmeden önce proje başvurunuzu inceleyin. Gözden geçirme için gönderilen başvurular üzerinde düzeltme / ekleme yapılamamaktadır.</p>
+  Proje Kodu: <code><%= @admission.token %></code>
   <hr></hr>
   <h3>Proje Konusu</h3>
   <%= simple_format(@admission.subject) %>
@@ -56,6 +57,8 @@
   <hr>
   <div class="final_container__switch">
     <%= simple_form_for @admission, url: admission_build_path, method: :put do |f| %>
+      <%= f.input :file, as: :file, label: "Başvurunuz ile birlikte PDF sunumunuzu da ekleyebilirsiniz." %>
+      <%= f.input :grant_request, as: :radio_buttons, boolean_style: :nested, label: "Projeme 500₺ Burs Desteği Talep Ediyorum", collection: [["Hayır", false], ["Evet", true]] %>
       <%= f.input :final, label: "Bu verilerin projemi tümüyle yansıttığını kabul ediyorum.", input_html: { class: "admission_final" } %>
       <%= f.button :submit, "Projeyi Tamamla ve Gözden Geçirmeye Gönder", id: "admission_final_btn" %>
     <% end %>

@@ -3,6 +3,7 @@ class Reviews::BuildController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admission
   before_action :set_review
+  before_action :check_if_review_final, only: :show
 
   steps :subject_summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 
@@ -26,6 +27,12 @@ class Reviews::BuildController < ApplicationController
 
 
   private
+
+  def check_if_review_final
+    unless current_user.admin?
+      redirect_to root_path, flash: { error: "Bu proje değerlendirmesi tamanlanmış ve üzerinde değişiklik yapılamaz. Lütfen sistem yöneticisi ile iletişime geçin." } if @review.final? || @admission.batch.due_date < Date.today
+    end
+  end
 
   def set_admission
     @admission = Admission.find(params[:admission_id])

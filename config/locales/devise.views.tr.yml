@@ -101,7 +101,7 @@ tr:
         didn_t_receive_confirmation_instructions: Onaylama talimatlarını almadınız mı?
         didn_t_receive_unlock_instructions: Hesap geri açma talimatlarını almadınız mı?
         forgot_your_password: Parolanızı mı unuttunuz?
-        sign_in: Giriş yap
+        sign_in: Portal Girişi
         sign_in_with_provider: "%{provider} ile giriş yap"
         sign_up: Kaydol
     unlocks:

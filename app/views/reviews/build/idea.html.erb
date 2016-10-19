@@ -1,5 +1,7 @@
+Proje Kodu: <code><%= @admission.token %></code>
 <%= render :partial => "refills/review_tabs" %>
 <h1>Fikrin Projeye Dönüşüm Süreci</h1>
+<h4>Proje Konusu: <%= @admission.subject %></h4>
 <%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
 <div class="grid-items-lines">
   <div class="grid-item grid-item-big">

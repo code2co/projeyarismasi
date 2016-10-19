@@ -1,3 +1,4 @@
+Proje Kodu: <code><%= @admission.token %></code>
 <%= render :partial => "refills/admission_tabs" %>
 <%= simple_form_for @admission, url: admission_build_path, method: :put do |f|  %>
 <%= f.input :industry__market_potential, label: "Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.", input_html: { rows: 5 } %>

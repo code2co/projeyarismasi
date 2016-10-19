@@ -1,19 +1,24 @@
 <h2><%= current_user.name %> hakemine ait proje değerlendirmeleri</h2>
-<table class="tables">
-  <thead>
-    <tr>
-      <th style="width: 70%">Proje Adı ve Bilgiler</th>
-      <th style="width: 30%">Gözden Geçirmenin Durumu</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reviews.each do |review| %>
+<% if @reviews.count > 0 %>
+  <table class="tables">
+    <thead>
       <tr>
-        <td><%= link_to review.admission.subject, admission_review_build_path(:subject_summary, admission_id: review.admission_id, review_id: review.id) %></td>
-        <td><%= review.final.to_s %></td>
+        <th style="width: 70%">Proje Adı ve Bilgiler</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td>
+            <%= link_to review.admission.subject, admission_review_build_path(:subject_summary, admission_id: review.admission_id, review_id: review.id) %>
+            <span><%= review.admission.summary.truncate_words(15) %></span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Tarafınıza atanmış ve tamamlanmamış proje değerlendirmesi yok.</p>
+<% end %>
 
 
