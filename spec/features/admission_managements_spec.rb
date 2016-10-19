@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can add/edit admissions", type: :feature do
   let (:applicant) { create :user, role: 0 }
+  let(:reviewer) { create :user, role: "reviewer" }
 
   before :example do
     login_as applicant, scope: :user
@@ -47,6 +48,14 @@ RSpec.feature "User can add/edit admissions", type: :feature do
       expect(page).to have_content "Proje başvurunuz başarıyla yüklendi"
       admission = Admission.last
       expect(admission.idea__short_history).to eq "Utku Kaynar"
+    end
+  end
+
+  context 'controls on user roles' do
+    it 'reviewers cannot apply to admissions' do
+      login_as reviewer, scope: :user
+      visit new_admission_path
+      expect(page).to have_content "Bu sayfaya erişmek için izniniz yok"
     end
   end
 end

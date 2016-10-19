@@ -14,7 +14,11 @@ class Reviews::BuildController < ApplicationController
   def update
     authorize! :update, @review
     if @review.update_attributes(review_params)
-      render_wizard @review
+      if @review.final?
+        redirect_to root_path, notice: "Proje değerlendirmeniz başarıyla yüklendi"
+      else
+        render_wizard @review
+      end
     else
       render_wizard @review, alert: "Kayıt güncellenemedi"
     end

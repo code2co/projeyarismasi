@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <h2>Yeni Bir Projeye Hakem Olarak Atandınız</h2>
-  <p>Merhaba <%= @user.name %>,</p>
-  <p>EMO Bursa Şubesi Özgün Proje Yarışmasında sistem yöneticisi sizi yeni bir projeye hakem olarak atadı. Projeyi değerlendirmeye hemen başlayabilirsiniz. Değerlendirme sayfasına gitmek için lütfen <a href="<%= admission_review_build_url(:subject_summary, admisson_id: @admission.id, review_id: @review.id) %>">linke</a> tıklayabilirsiniz.</p>
-  <p>
-    Saygılarımızla,
-    Özgün Proje Yarışması Ekibi
-  </p>
-</body>
-</html>
+<h2>Yeni Bir Projeye Hakem Olarak Atandınız</h2>
+<p>Merhaba <%= @user.name %>,</p>
+<p>EMO Bursa Şubesi Özgün Proje Yarışmasında sistem yöneticisi sizi yeni bir projeye hakem olarak atadı. <br>Projeyi değerlendirmeye hemen başlayabilirsiniz. </p>
+<p>Değerlendirme sayfasına gitmek için lütfen <a href="<%= admission_review_build_url(:subject_summary, admission_id: @admission.id, review_id: @review.id) %>">linke</a> tıklayın.</p>
+<p>Kullanıcı adı ve şifrenizle giriş yapmanız gerekecektir.</p>
+<p>
+  Saygılarımızla, <br>
+  EMO Bursa Şubesi Özgün Proje Yarışması Ekibi
+</p>

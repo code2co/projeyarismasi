@@ -3,6 +3,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password "12345678"
     confirmed_at Time.now
+    name { Faker::Name.name}
   end
 
   factory :review do
