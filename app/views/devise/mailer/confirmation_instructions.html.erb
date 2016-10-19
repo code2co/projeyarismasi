@@ -1,5 +1,5 @@
-<p>Hoşgeldiniz <%= @email %>!</p>
+<p>Hoşgeldiniz <%= @resource.name %>!</p>
 
 <p>Hesabınızı doğrulamak için aşağıdaki bağlantıya tıklayın.</p>
 
-<p><%= link_to 'Hesabımı doğrula', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Hesabımı onayla', confirmation_url(@resource, confirmation_token: @token) %></p>
