@@ -1,5 +1,9 @@
 require "rails_helper"
 
 RSpec.describe AdminNotifierMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:admission) { create :admission }
+  let(:mail) { AdminNotifier.new_admission(admission) }
+  it 'is sending admins email' do
+
+  end
 end

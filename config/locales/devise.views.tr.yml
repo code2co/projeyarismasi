@@ -35,7 +35,7 @@ tr:
         action: Hesabımı onayla
         greeting: Hoşgeldiniz %{recipient}!
         instruction: 'E-postanızı aşağıdaki bağlantıyı takip ederek onaylayabilirsiniz:'
-        subject: Onaylama talimatları.
+        subject: "EMO Genç Özgün Proje Yarışması Başvuru Portalı Onaylama talimatları"
       password_change:
         greeting: Merhaba %{recipient}!
         message: "Şifreniz az önce değiştirildi."

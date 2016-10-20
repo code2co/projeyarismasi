@@ -62,7 +62,8 @@ class Reviews::BuildController < ApplicationController
       :industry__sales_potential,
       :industry__added_value,
       :final,
-      :admission_id
+      :admission_id,
+      :comments
     )
   end
 end
