@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can add/edit admissions", type: :feature do
   let (:applicant) { create :user, role: 0 }
+  let(:batch) { create :batch }
   let(:reviewer) { create :user, role: "reviewer" }
 
   before :example do
@@ -47,6 +48,8 @@ RSpec.feature "User can add/edit admissions", type: :feature do
       click_button "Projeyi Tamamla ve Gözden Geçirmeye Gönder"
       expect(page).to have_content "Proje başvurunuz başarıyla yüklendi"
       admission = Admission.last
+      admission.batch = batch
+      admission.save
       expect(admission.idea__short_history).to eq "Utku Kaynar"
     end
   end

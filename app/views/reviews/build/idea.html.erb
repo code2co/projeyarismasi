@@ -7,42 +7,47 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item grid-item-big">
     <h2>Proje konusu ürünü / süreci geliştirme faaliyetleri nasıl örgütlendi ve yönetildi?</h2>
     <p><%= @admission.idea__short_history %></p>
+    <%= f.input :notes_for_idea__short_history, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
-    <%= f.input :idea__short_history, label: false %>
+    <%= f.input :idea__short_history, label: false%>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje tasarımı sırasında ne gibi yöntem ve teknikler kullanıldı?</h2>
     <p><%= @admission.idea__tecniques_methods %></p>
+    <%= f.input :notes_for_idea__tecniques_methods, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
-    <%= f.input :idea__tecniques_methods, label: false %>
+    <%= f.input :idea__tecniques_methods, label: false%>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje tasarımının doğrulanması nasıl gerçekleştirildi?</h2>
     <p><%= @admission.idea__verification %></p>
+    <%= f.input :notes_for_idea__verification, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
-    <%= f.input :idea__verification, label: false %>
+    <%= f.input :idea__verification, label: false%>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Benzer projelerle karşılaştırıldığında, tasarımdan kaynaklanan maliyet düşürücü yenilikler var mı?</h2>
     <p><%= @admission.idea__cost_cutting_techniques %></p>
+    <%= f.input :notes_for_idea__cost_cutting_techniques, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
-    <%= f.input :idea__cost_cutting_techniques, label: false %>
+    <%= f.input :idea__cost_cutting_techniques, label: false%>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje üretiminde yeni teknolojiler veya rekabetçi uygulamalar var mıdır?</h2>
     <p><%= @admission.idea__new_tech_cost_cutting_advantages %></p>
+    <%= f.input :notes_for_idea__new_tech_cost_cutting_advantages, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
-    <%= f.input :idea__new_tech_cost_cutting_advantages, label: false %>
+    <%= f.input :idea__new_tech_cost_cutting_advantages%>
   </div>
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>

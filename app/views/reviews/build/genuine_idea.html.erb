@@ -6,6 +6,7 @@
     <div class="grid-item grid-item-big">
       <h2>1a. Projede özgün ve yenilikçilik adına yapılan araştırmalar</h2>
       <p><%= @admission.genuine_idea__research %></p>
+      <%= f.input :notes_for_genuine_idea__research, label: false, placeholder: "Notlar" %>
     </div>
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>
@@ -14,6 +15,7 @@
     <div class="grid-item grid-item-big">
       <h2>1b. Proje fikrinin dayandığı özgünlük gerekçeleri, dayanaklar</h2>
       <p><%= @admission.genuine_idea__proof %></p>
+      <%= f.input :notes_for_genuine_idea__proof, label: false, placeholder: "Notlar" %>
     </div>
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>
@@ -22,6 +24,7 @@
     <div class="grid-item grid-item-big">
       <h2>1c. Özgün ve yenilikçi fikrin, uygulanabilirlik analizi ve izlenen süreçler</h2>
       <p><%= @admission.genuine_idea__processes %></p>
+      <%= f.input :notes_for_genuine_idea__processes, label: false, placeholder: "Notlar" %>
     </div>
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>

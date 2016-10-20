@@ -62,5 +62,23 @@ tr:
     final: "Tamamlama"
     subject: "Konu"
     summary: "Özet"
+  review:
+    notes_for_genuine_idea__research: "Özgün Fikir -- Araştırma"
+    notes_for_genuine_idea__proof: "Özgün Fikir -- Kanıtlar"
+    notes_for_genuine_idea__processes: "Özgün Fikir -- Süreçler"
+    notes_for_innovativeness__target_user_expectations: "Yenilikçilik -- Kullanıcı Beklentileri"
+    notes_for_innovavativeness__genuine: "Yenilikçilik -- Özgünlük"
+    notes_for_innovativeness__similarity_to_other_projects: "Yenilikçilik -- Diğer Projelere Benzerlik"
+    notes_for_innovativeness__benefits_to_users: "Yenilikçilik -- Kullanıcılara Fayda"
+    notes_for_innovativeness__research: "Yenilikçilik -- Araştırma"
+    notes_for_idea__short_history: "Fikir/Proje Kısa Özet"
+    notes_for_idea__tecniques_methods: "Fikir/Proje Teknikler ve Metodlar"
+    notes_for_idea__verification: "Fikir/Proje Doğrulama"
+    notes_for_idea__cost_cutting_techniques: "Fikir/Proje Maliyet Düşürücü Teknikler"
+    notes_for_idea__new_tech_cost_cutting_advantages: "Fikir/Proje Yeni Teknolojiler"
+    notes_for_industry__market_potential: "Endüstriyelleşme -- Pazar Potansiyeli"
+    notes_for_industry__physibility: "Endüstriyelleşme -- Fizibilite"
+    notes_for_industry__sales_potential: "Endüstriyelleşme -- Satış Potansiyeli"
+    notes_for_industry__added_value: "Endüstriyelleşme -- Katma Değer"
 
 

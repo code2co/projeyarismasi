@@ -63,7 +63,24 @@ class Reviews::BuildController < ApplicationController
       :industry__added_value,
       :final,
       :admission_id,
-      :comments
+      :comments,
+      :notes_for_genuine_idea__research,
+      :notes_for_genuine_idea__proof,
+      :notes_for_genuine_idea__processes,
+      :notes_for_innovativeness__target_user_expectations,
+      :notes_for_innovavativeness__genuine,
+      :notes_for_innovativeness__similarity_to_other_projects,
+      :notes_for_innovativeness__benefits_to_users,
+      :notes_for_innovativeness__research,
+      :notes_for_idea__short_history,
+      :notes_for_idea__tecniques_methods,
+      :notes_for_idea__verification,
+      :notes_for_idea__cost_cutting_techniques,
+      :notes_for_idea__new_tech_cost_cutting_advantages,
+      :notes_for_industry__market_potential,
+      :notes_for_industry__physibility,
+      :notes_for_industry__sales_potential,
+      :notes_for_industry__added_value
     )
   end
 end

@@ -60,7 +60,11 @@
       <%= f.input :file, as: :file, label: "Başvurunuz ile birlikte PDF sunumunuzu da ekleyebilirsiniz." %>
       <%= f.input :grant_request, as: :radio_buttons, boolean_style: :nested, label: "Projeme 500₺ Burs Desteği Talep Ediyorum", collection: [["Hayır", false], ["Evet", true]] %>
       <%= f.input :final, label: "Bu verilerin projemi tümüyle yansıttığını kabul ediyorum.", input_html: { class: "admission_final" } %>
-      <%= f.button :submit, "Projeyi Tamamla ve Gözden Geçirmeye Gönder", id: "admission_final_btn" %>
+      <% if @admission.final? %>
+        <%= f.button :submit, "Projeyi Tamamla ve Gözden Geçirmeye Gönder", id: "admission_final_btn" %>
+      <% else %>
+        <%= f.button :submit, "Projeyi Tamamla ve Gözden Geçirmeye Gönder", id: "admission_final_btn", disabled: true %>
+      <% end %>
     <% end %>
   </div>
 </div>

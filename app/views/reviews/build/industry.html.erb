@@ -6,6 +6,7 @@
   <div class="grid-item grid-item-big">
     <h2>Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.</h2>
     <p><%= @admission.industry__market_potential %></p>
+    <%= f.input :notes_for_industry__market_potential, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
@@ -14,6 +15,7 @@
   <div class="grid-item grid-item-big">
     <h2>Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı.</h2>
     <p><%= @admission.industry__physibility %></p>
+    <%= f.input :notes_for_industry__physibility, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
@@ -22,6 +24,7 @@
   <div class="grid-item grid-item-big">
     <h2>Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü.</h2>
     <p><%= @admission.industry__sales_potential %></p>
+    <%= f.input :notes_for_industry__sales_potential, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
@@ -30,6 +33,7 @@
   <div class="grid-item grid-item-big">
     <h2>Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi.</h2>
     <p><%= @admission.industry__added_value %></p>
+    <%= f.input :notes_for_industry__added_value, label: false, placeholder: "Notlar" %>
   </div>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>

@@ -63,6 +63,11 @@ header.navigation ul li.nav-link button {
     @include span-columns(8);
     @include shift(2);
   }
+  .review_notes {
+    clear: both;
+    @include span-columns(12);
+    margin-bottom: 2em;
+  }
   .final_container__switch {
     @include span-columns(8);
   }

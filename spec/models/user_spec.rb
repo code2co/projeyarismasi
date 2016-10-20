@@ -21,7 +21,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create :user }
+  let(:user) { create :user, role: "applicant" }
   before :example do
     login_as user, scope: :user
   end

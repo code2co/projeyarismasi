@@ -2,30 +2,47 @@
 #
 # Table name: reviews
 #
-#  id                                           :integer          not null, primary key
-#  genuine_idea__research                       :integer
-#  genuine_idea__proof                          :integer
-#  genuine_idea__processes                      :integer
-#  innovativeness__target_user_expectations     :integer
-#  innovavativeness__genuine                    :integer
-#  innovativeness__similarity_to_other_projects :integer
-#  innovativeness__benefits_to_users            :integer
-#  innovativeness__research                     :integer
-#  idea__short_history                          :integer
-#  idea__tecniques_methods                      :integer
-#  idea__verification                           :integer
-#  idea__cost_cutting_techniques                :integer
-#  idea__new_tech_cost_cutting_advantages       :integer
-#  industry__market_potential                   :integer
-#  industry__physibility                        :integer
-#  industry__sales_potential                    :integer
-#  industry__added_value                        :integer
-#  final                                        :boolean
-#  admission_id                                 :integer
-#  created_at                                   :datetime         not null
-#  updated_at                                   :datetime         not null
-#  user_id                                      :integer
-#  comments                                     :text
+#  id                                                     :integer          not null, primary key
+#  genuine_idea__research                                 :integer
+#  genuine_idea__proof                                    :integer
+#  genuine_idea__processes                                :integer
+#  innovativeness__target_user_expectations               :integer
+#  innovavativeness__genuine                              :integer
+#  innovativeness__similarity_to_other_projects           :integer
+#  innovativeness__benefits_to_users                      :integer
+#  innovativeness__research                               :integer
+#  idea__short_history                                    :integer
+#  idea__tecniques_methods                                :integer
+#  idea__verification                                     :integer
+#  idea__cost_cutting_techniques                          :integer
+#  idea__new_tech_cost_cutting_advantages                 :integer
+#  industry__market_potential                             :integer
+#  industry__physibility                                  :integer
+#  industry__sales_potential                              :integer
+#  industry__added_value                                  :integer
+#  final                                                  :boolean
+#  admission_id                                           :integer
+#  created_at                                             :datetime         not null
+#  updated_at                                             :datetime         not null
+#  user_id                                                :integer
+#  comments                                               :text
+#  notes_for_genuine_idea__research                       :string
+#  notes_for_genuine_idea__proof                          :string
+#  notes_for_genuine_idea__processes                      :string
+#  notes_for_innovativeness__target_user_expectations     :string
+#  notes_for_innovavativeness__genuine                    :string
+#  notes_for_innovativeness__similarity_to_other_projects :string
+#  notes_for_innovativeness__benefits_to_users            :string
+#  notes_for_innovativeness__research                     :string
+#  notes_for_idea__short_history                          :string
+#  notes_for_idea__tecniques_methods                      :string
+#  notes_for_idea__verification                           :string
+#  notes_for_idea__cost_cutting_techniques                :string
+#  notes_for_idea__new_tech_cost_cutting_advantages       :string
+#  notes_for_industry__market_potential                   :string
+#  notes_for_industry__physibility                        :string
+#  notes_for_industry__sales_potential                    :string
+#  notes_for_industry__added_value                        :string
 #
 # Indexes
 #

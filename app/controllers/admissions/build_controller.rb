@@ -3,6 +3,7 @@ class Admissions::BuildController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admission
   before_action :check_if_final, only: [:show]
+  before_action :check_due_date, only: [:show]
   steps :subject, :summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 
   def show
@@ -36,8 +37,17 @@ class Admissions::BuildController < ApplicationController
 
   def check_if_final
     unless current_user.admin?
-      redirect_to root_path, flash: { error: "Bu proje başvurusu tamamlanarak onaya gönderilmiş ve düzenlenemez, lütfen sistem yöneticisi ile iletişime geçin." } if @admission.final? || @admission.batch.due_date < Date.today
+      redirect_to root_path, flash: { error: "Bu proje başvurusu tamamlanarak onaya gönderilmiş ve düzenlenemez, lütfen sistem yöneticisi ile iletişime geçin." } if @admission.final?
     end
+  end
+
+  def check_due_date
+    unless current_user.admin?
+      redirect_to root_path, flash: { error: "Bu proje başvurusu için son düzenleme tarihi geçmiş" } if @admission.try(:batch).try(:due_date) < Date.today
+    end
+  rescue NoMethodError
+    Rails.logger.error "Admission Batch is nil for Admission: #{@admission.id}"
+    true
   end
 
   def admission_params

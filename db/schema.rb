@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019130733) do
+ActiveRecord::Schema.define(version: 20161020090546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,10 +94,27 @@ ActiveRecord::Schema.define(version: 20161019130733) do
     t.integer  "industry__added_value"
     t.boolean  "final"
     t.integer  "admission_id"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "user_id"
     t.text     "comments"
+    t.string   "notes_for_genuine_idea__research"
+    t.string   "notes_for_genuine_idea__proof"
+    t.string   "notes_for_genuine_idea__processes"
+    t.string   "notes_for_innovativeness__target_user_expectations"
+    t.string   "notes_for_innovavativeness__genuine"
+    t.string   "notes_for_innovativeness__similarity_to_other_projects"
+    t.string   "notes_for_innovativeness__benefits_to_users"
+    t.string   "notes_for_innovativeness__research"
+    t.string   "notes_for_idea__short_history"
+    t.string   "notes_for_idea__tecniques_methods"
+    t.string   "notes_for_idea__verification"
+    t.string   "notes_for_idea__cost_cutting_techniques"
+    t.string   "notes_for_idea__new_tech_cost_cutting_advantages"
+    t.string   "notes_for_industry__market_potential"
+    t.string   "notes_for_industry__physibility"
+    t.string   "notes_for_industry__sales_potential"
+    t.string   "notes_for_industry__added_value"
     t.index ["admission_id"], name: "index_reviews_on_admission_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end

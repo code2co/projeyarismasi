@@ -54,7 +54,7 @@ class Admission < ApplicationRecord
   belongs_to :batch
   belongs_to :user
   has_many :reviews
-  after_create :assign_batch
+  before_create :assign_batch
   before_create :assign_token
   validates :subject, presence: true, if: :final?
   validates :summary, presence: true, if: :final?
