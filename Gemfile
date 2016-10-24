@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+# Add heroku comment
 ruby "2.3.1"
 
 gem "autoprefixer-rails"
