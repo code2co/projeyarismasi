@@ -22,6 +22,9 @@ class Admissions::BuildController < ApplicationController
       if @admission.final?
         redirect_to root_path, notice: 'Proje başvurunuz başarıyla yüklendi.'
         UserNotifierMailer.admission_accepted(current_user, @admission).deliver_later
+        User.admin.each do |admin|
+          AdminNotifierMailer.new_admission(@admission, admin).deliver_later
+        end
       else
         render_wizard @admission
       end

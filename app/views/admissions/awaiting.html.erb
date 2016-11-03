@@ -8,7 +8,7 @@
   <tbody>
     <% @admissions.each do |admission| %>
       <tr>
-        <td><%= link_to admission.subject, admission_path(admission) %></td>
+        <td><%= link_to admission.subject, reviewer_select_admission_path(admission) %></td>
       </tr>
     <% end %>
   </tbody>
