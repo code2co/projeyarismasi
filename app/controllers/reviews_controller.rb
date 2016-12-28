@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
   end
 
   def my_reviews
-    @reviews = current_user.reviews.includes(:admission).where(final: false)
+    @reviews = current_user.reviews.includes(:admission).where(final: nil)
   end
 
   private
