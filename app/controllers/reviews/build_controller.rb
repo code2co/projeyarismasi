@@ -30,7 +30,7 @@ class Reviews::BuildController < ApplicationController
 
   def check_if_review_final
     unless current_user.admin?
-      redirect_to root_path, flash: { error: "Bu proje değerlendirmesi tamanlanmış ve üzerinde değişiklik yapılamaz. Lütfen sistem yöneticisi ile iletişime geçin." } if @review.final? || @admission.batch.due_date < Date.today
+      redirect_to root_path, flash: { error: "Bu proje değerlendirmesi tamanlanmış ve üzerinde değişiklik yapılamaz. Lütfen sistem yöneticisi ile iletişime geçin." } if @review.final?
     end
   end
 
