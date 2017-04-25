@@ -39,7 +39,7 @@ class Admissions::BuildController < ApplicationController
   end
 
   def check_if_final
-    unless current_user.admin?
+    unless current_user.admin? || current_user.reviewer?
       redirect_to root_path, flash: { error: "Bu proje başvurusu tamamlanarak onaya gönderilmiş ve düzenlenemez, lütfen sistem yöneticisi ile iletişime geçin." } if @admission.final?
     end
   end

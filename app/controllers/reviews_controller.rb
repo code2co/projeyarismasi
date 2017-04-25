@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
   def my_reviews
     @reviews = current_user.reviews.includes(:admission).where(final: nil)
+    @other_reviews = Review.joins(:admission).where('reviews.user_id <> ? AND reviews.final IS NULL', current_user.id)
   end
 
   private

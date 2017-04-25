@@ -22,3 +22,27 @@
 <% end %>
 
 
+<h2><%= current_user.name %> değerlendirmesi size ait olmayan diğer proje başvuruları</h2>
+<% if @other_reviews.count > 0 %>
+  <table class="tables">
+    <thead>
+      <tr>
+        <th style="width: 70%">Proje Adı ve Bilgiler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @other_reviews.each do |review| %>
+        <tr>
+          <td>
+            <%= link_to review.admission.subject, admission_build_path(:final, admission_id: review.admission_id) %>
+            <span><%= review.admission.summary.truncate_words(15) %></span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Size ait olmayan ve değerlendirmeye gönderilmiş proje başvurusu bulunmamakta.</p>
+<% end %>
+
+
