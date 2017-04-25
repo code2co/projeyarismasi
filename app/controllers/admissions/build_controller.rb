@@ -3,7 +3,7 @@ class Admissions::BuildController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admission
   before_action :check_if_final, only: [:show]
-  before_action :check_due_date, only: [:show]
+  # before_action :check_due_date, only: [:show]
   steps :subject, :summary, :genuine_idea, :innovativeness, :idea, :industry, :final
 
   def show
