@@ -79,7 +79,7 @@ class Admission < ApplicationRecord
   validates :bio, presence: true, if: :final?
   has_attached_file :file, styles: {thumbnail: "60x60#"}
   validates_attachment :file, content_type: { content_type: "application/pdf" }
-  validates_attachment :file, size: { less_than: 3.megabytes }
+  validates_attachment :file, size: { less_than: 10.megabytes }
 
   def final?
     self.final == true
