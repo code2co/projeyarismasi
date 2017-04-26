@@ -4,6 +4,7 @@ Bundler.require(*Rails.groups)
 module Projeyarismasi
   class Application < Rails::Application
     config.assets.quiet = true
+    config.i18n.default_locale = :tr
     config.generators do |generate|
       generate.helper false
       generate.javascript_engine false
