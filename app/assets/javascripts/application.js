@@ -22,4 +22,11 @@ $(document).ready(function(){
       $("input:submit#admission_final_btn").prop("disabled", true);
     }
   });
+  $("input#review_final").on("change", function(){
+    if($(this).prop('checked') == true) {
+      $("input:submit#review_final_btn").prop("disabled", false);
+    } else {
+      $("input:submit#review_final_btn").prop("disabled", true);
+    }
+  });
 });
