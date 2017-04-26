@@ -2,7 +2,7 @@ Proje Kodu: <code><%= @admission.token %></code>
 <%= render :partial => "refills/review_tabs" %>
 <h1>Fikrin Projeye Dönüşüm Süreci</h1>
 <h4>Proje Konusu: <%= @admission.subject %></h4>
-<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, validate:true, method: :put do |f| %>
 <div class="grid-items-lines">
   <div class="grid-item grid-item-big">
     <h2>Proje konusu ürünü / süreci geliştirme faaliyetleri nasıl örgütlendi ve yönetildi?</h2>
@@ -12,6 +12,7 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :idea__short_history, label: false%>
+    <%= f.label "Max 80" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje tasarımı sırasında ne gibi yöntem ve teknikler kullanıldı?</h2>
@@ -21,6 +22,7 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :idea__tecniques_methods, label: false%>
+    <%= f.label "Max 80" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje tasarımının doğrulanması nasıl gerçekleştirildi?</h2>
@@ -30,6 +32,7 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :idea__verification, label: false%>
+    <%= f.label "Max 80" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Benzer projelerle karşılaştırıldığında, tasarımdan kaynaklanan maliyet düşürücü yenilikler var mı?</h2>
@@ -39,6 +42,7 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :idea__cost_cutting_techniques, label: false%>
+    <%= f.label "Max 80" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje üretiminde yeni teknolojiler veya rekabetçi uygulamalar var mıdır?</h2>
@@ -48,6 +52,7 @@ Proje Kodu: <code><%= @admission.token %></code>
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :idea__new_tech_cost_cutting_advantages%>
+    <%= f.label "Max 80" %>
   </div>
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>

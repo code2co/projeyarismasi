@@ -1,7 +1,7 @@
 <%= render :partial => "refills/review_tabs" %>
 <h1>Sanayii ve Ticari Uygulanabilirlik</h1>
 <h4>Proje Konusu: <%= @admission.subject %></h4>
-<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, validate: true, method: :put do |f| %>
 <div class="grid-items-lines">
   <div class="grid-item grid-item-big">
     <h2>Projedeki özgün ve yaratıcı fikirlerin, yeni pazar oluşturmaktaki potansiyeli.</h2>
@@ -11,6 +11,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :industry__market_potential, label: false %>
+    <%= f.label "Max 40" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Projedeki özgün ve yaratıcı fikirlerin yapılabilirlik etüdünün varlığı.</h2>
@@ -20,6 +21,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :industry__physibility, label: false %>
+    <%= f.label "Max 40" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Projenin satış potansiyeli hakkında proje sahiplerinin öngörüsü.</h2>
@@ -29,6 +31,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :industry__sales_potential, label: false %>
+    <%= f.label "Max 40" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Projenin ülke sanayi ve ticaretine potansiyel katma değer katkısının analizi.</h2>
@@ -38,6 +41,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :industry__added_value, label: false %>
+    <%= f.label "Max 40" %>
   </div>
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>

@@ -1,7 +1,7 @@
 <%= render :partial => "refills/review_tabs" %>
 <h1>Özgün Fikrin Yaratılması</h1>
 <h4>Proje Konusu: <%= @admission.subject %></h4>
-<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, validate: true, method: :put do |f| %>
   <div class="grid-items-lines">
     <div class="grid-item grid-item-big">
       <h2>1a. Projede özgün ve yenilikçilik adına yapılan araştırmalar</h2>
@@ -11,6 +11,7 @@
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>
       <%= f.input :genuine_idea__research, label: false %>
+      <%= f.label "Max 50" %>
     </div>
     <div class="grid-item grid-item-big">
       <h2>1b. Proje fikrinin dayandığı özgünlük gerekçeleri, dayanaklar</h2>
@@ -20,6 +21,7 @@
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>
       <%= f.input :genuine_idea__proof, label: false %>
+      <%= f.label "Max 50" %>
     </div>
     <div class="grid-item grid-item-big">
       <h2>1c. Özgün ve yenilikçi fikrin, uygulanabilirlik analizi ve izlenen süreçler</h2>
@@ -29,6 +31,7 @@
     <div class="grid-item">
       <h2>Değerlendirme Puanı</h2>
       <%= f.input :genuine_idea__processes, label: false %>
+      <%= f.label "Max 50" %>
     </div>
     <div class="right-cover"></div>
     <div class="bottom-cover"></div>

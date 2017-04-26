@@ -1,7 +1,7 @@
 <%= render :partial => "refills/review_tabs" %>
 <h1>Proje Özelliklerinde, Uygulama Yöntemlerinde Özgünlük, Yenilikçilik</h1>
 <h4>Proje Konusu: <%= @admission.subject %></h4>
-<%= simple_form_for [@admission, @review], url: admission_review_build_path, method: :put do |f| %>
+<%= simple_form_for [@admission, @review], url: admission_review_build_path, validate: true, method: :put do |f| %>
 <div class="grid-items-lines">
   <div class="grid-item grid-item-big">
     <h2>Proje Özelliklerinin Belirlenmesinde Hedef Kullanıcı Beklentilerinin Karşılanması</h2>
@@ -11,6 +11,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :innovativeness__target_user_expectations, label: false %>
+      <%= f.label "Max 30" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje Konusu Ürün Tasarımının Özgünlüğü</h2>
@@ -20,6 +21,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :innovavativeness__genuine, label: false %>
+      <%= f.label "Max 30" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Projenin Özgün ve Yenilikçi Yönlerinin Daha Önceki Projeler ile Karşılaştırılması</h2>
@@ -29,6 +31,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :innovativeness__similarity_to_other_projects, label: false %>
+    <%= f.label "Max 30" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Projenin Özgün ve Yenilikçi Yönlerinin Kullanıcılara Sağladığı Yararlar</h2>
@@ -38,6 +41,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :innovativeness__benefits_to_users, label: false %>
+    <%= f.label "Max 30" %>
   </div>
   <div class="grid-item grid-item-big">
     <h2>Proje Konusu İçin Geçerli Olabilecek Uluslararası Standartlar</h2>
@@ -47,6 +51,7 @@
   <div class="grid-item">
     <h2>Değerlendirme Puanı</h2>
     <%= f.input :innovativeness__research, label: false %>
+    <%= f.label "Max 30" %>
   </div>
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>
