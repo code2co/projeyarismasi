@@ -30,4 +30,19 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'User' do
+    list do
+      field :email
+    end
+    edit do
+      field :email
+      field :password
+      field :role
+      field :name
+      field :university
+      field :department
+      field :mobile_phone
+    end
+  end
 end
