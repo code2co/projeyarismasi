@@ -21,7 +21,9 @@
     <%= f.input :university, collection: ['Balıkesir Üniversitesi', 'Bursa Teknik Üniversitesi', 'Uludağ Üniversitesi'], prompt: "Üniversitenizi Seçin", required: false, label: "Üniversite" %>
     <%= f.input :department, placeholder: "Bölümünüzü girin", required: false, label: "Bölüm" %>
     <%= f.input :mobile_phone, placeholder: "Cep Telefonunuzu Girin", required: false %>
-    <%= f.input :role, collection: {applicant: "Projeye Başvurmak İstiyorum", volunteer: "Gönüllü Çalışmak istiyorum"}.map { |k,v| [v,k] }, prompt: "Bu sitedeki rolünüz ne olacak?", label: "Rol Seçimi"%>
+    <% if current_user.role == 'applicant' || current_user.role == 'volunteer' %>
+      <%= f.input :role, collection: {applicant: "Projeye Başvurmak İstiyorum", volunteer: "Gönüllü Çalışmak istiyorum"}.map { |k,v| [v,k] }, prompt: "Bu sitedeki rolünüz ne olacak?", label: "Rol Seçimi"%>
+    <% end %>
   </div>
 
   <div class="form-actions">
